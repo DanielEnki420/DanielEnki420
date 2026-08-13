@@ -34,7 +34,7 @@ Built with TanStack Start.
 Real-time FFT spectral analysis of cat vocalizations, with AI-assisted interpretation
 of the result. Browser-side, containerised.
 
-`HTML` `JavaScript` `Docker` · Apache-2.0
+[**→ Live tool**](https://danielenki420.github.io/katzen-analyzer/) · `HTML` `JavaScript` `Docker` · Apache-2.0
 
 ---
 
