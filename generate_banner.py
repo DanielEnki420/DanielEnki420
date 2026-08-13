@@ -39,18 +39,21 @@ THEMES = {
 }
 
 # --- Logo: Meander-Ring mit dem Wahlspruch -------------------------------
+# Der Ring war zuvor so gross, dass er fast an Kartenrand und Eckwinkel
+# stiess — die eigentliche Kartenrahmung (double_border/corner_brackets)
+# hatte dadurch kaum Luft. Kleinerer Ring, klarer Abstand ringsum.
 LOGO_CX, LOGO_CY = 998, 150
-R_RIM = 138          # aeussere Haarlinie
-R_BAND_OUT = 130     # Maeanderband aussen
-R_BAND_IN = 110      # Maeanderband innen
-R_INNER = 104        # innere Haarlinie
+R_RIM = 112          # aeussere Haarlinie
+R_BAND_OUT = 105     # Maeanderband aussen
+R_BAND_IN = 84       # Maeanderband innen
+R_INNER = 78         # innere Haarlinie
 MEANDER_UNITS = 28   # Wiederholungen des Schluesselmotivs
 MOTTO = "ESSE QUAM VIDERI"
 
 # Das Spektrum laeuft als Fussleiste unter dem Textblock und endet vor dem
 # Logo-Ring, damit sich beide nicht ins Gehege kommen.
 MARGIN = 64
-SPEC_X1 = 856
+SPEC_X1 = 850
 BAR_W = 10
 BAR_GAP = 6
 BARS = (SPEC_X1 - MARGIN + BAR_GAP) // (BAR_W + BAR_GAP)
@@ -72,11 +75,11 @@ def spectrum(t):
 def double_border(c):
     """Doppelte Zierlinie entlang des Kartenrands — klassisches Deco-Passepartout."""
     out = []
-    for inset in (10, 16):
+    for inset in (9, 19):
         r = max(14 - inset, 2)
         out.append(f'<rect x="{inset}" y="{inset}" width="{W - 2 * inset}" '
                     f'height="{H - 2 * inset}" rx="{r}" fill="none" '
-                    f'stroke="{c["gold"]}" stroke-width="1" opacity="0.55"/>')
+                    f'stroke="{c["gold"]}" stroke-width="1.2" opacity="0.55"/>')
     return "".join(out)
 
 
@@ -87,8 +90,8 @@ def corner_brackets(c):
     der innere zurueckhaltender, dazwischen eine kleine Stufe.
     """
     out = []
-    arm_outer, arm_inner = 34, 20
-    inset0, step = 22, 8
+    arm_outer, arm_inner = 42, 25
+    inset0, step = 25, 9
 
     def bracket(x0, y0, sx, sy):
         segs = []
@@ -98,7 +101,7 @@ def corner_brackets(c):
             segs.append(
                 f'<path d="M{ax:.1f},{ay + sy * arm:.1f} L{ax:.1f},{ay:.1f} '
                 f'L{ax + sx * arm:.1f},{ay:.1f}" fill="none" '
-                f'stroke="{c["gold"]}" stroke-width="1.4" '
+                f'stroke="{c["gold"]}" stroke-width="1.6" '
                 f'opacity="{0.9 if i == 0 else 0.5}"/>')
         return "".join(segs)
 
@@ -112,21 +115,23 @@ def corner_brackets(c):
 def sunburst(c):
     """Strahlenkranz hinter dem Maeanderring — Deco-Sonnentor-Motiv.
 
-    Laeuft komplett um den Ring, aber kurz und mit niedriger Deckkraft,
-    damit er nicht mit dem Spektrum links davon kollidiert.
+    Gleichlange Strahlen statt abwechselnd lang/kurz: die erste Fassung
+    wirkte durch die Laengenvariation zackig statt wie ein ruhiger Kranz.
+    Der Aussenradius bleibt klar innerhalb der rechten Eckwinkel, damit
+    sich beide Zierelemente nicht schneiden.
     """
-    out = ['<g opacity="0.30" stroke-width="1">']
-    n = 24
-    r_in = R_RIM + 6
+    r_in = R_RIM + 7
+    r_out = R_RIM + 15
+    out = [f'<g opacity="0.22" stroke="{c["gold"]}" stroke-width="1">']
+    n = 20
     for i in range(n):
         ang = math.radians(i * 360.0 / n)
-        r_out = R_RIM + (28 if i % 2 == 0 else 18)
         x1 = LOGO_CX + r_in * math.cos(ang)
         y1 = LOGO_CY + r_in * math.sin(ang)
         x2 = LOGO_CX + r_out * math.cos(ang)
         y2 = LOGO_CY + r_out * math.sin(ang)
         out.append(f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" '
-                    f'y2="{y2:.1f}" stroke="{c["gold"]}"/>')
+                    f'y2="{y2:.1f}"/>')
     out.append('</g>')
     return "".join(out)
 
@@ -150,11 +155,13 @@ def meander_ring(c):
     # Haarlinien aussen und innen
     for r in (R_RIM, R_INNER):
         add(f'<circle cx="{LOGO_CX}" cy="{LOGO_CY}" r="{r}" fill="none" '
-            f'stroke="{c["gold"]}" stroke-width="2"/>')
+            f'stroke="{c["gold"]}" stroke-width="2.4"/>')
 
-    # Das Motiv: Grundlinie + eingerollter Haken (klassischer Maeander)
+    # Das Motiv: Grundlinie + eingerollter Haken (klassischer Maeander).
+    # stroke-width 1.2 statt 0.95 im Erstentwurf — auf dem breiteren Band
+    # wirkte die duennere Linie ausgefranst statt kraeftig.
     unit = "M0,6 H8 M0,6 V0 H6 V4 H2 V2 H4"
-    add(f'<g fill="none" stroke="{c["gold"]}" stroke-width="0.95" '
+    add(f'<g fill="none" stroke="{c["gold"]}" stroke-width="1.2" '
         f'stroke-linecap="square">')
     for i in range(MEANDER_UNITS):
         angle = i * 360.0 / MEANDER_UNITS
@@ -168,9 +175,9 @@ def meander_ring(c):
     # textLength/lengthAdjust nagelt die Breite fest: der Spruch bleibt im
     # Innenkreis, auch wenn beim Betrachter eine andere Serife einspringt.
     serif = "Georgia, 'Times New Roman', 'Iowan Old Style', serif"
-    text_w = 2 * R_INNER - 36
-    add(f'<text x="{LOGO_CX}" y="{LOGO_CY + 7}" text-anchor="middle" '
-        f'font-family="{serif}" font-size="19" '
+    text_w = 2 * R_INNER - 30
+    add(f'<text x="{LOGO_CX}" y="{LOGO_CY + 5}" text-anchor="middle" '
+        f'font-family="{serif}" font-size="14" '
         f'textLength="{text_w}" lengthAdjust="spacingAndGlyphs" '
         f'fill="{c["gold"]}">{MOTTO}</text>')
 
