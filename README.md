@@ -86,7 +86,7 @@ scripted — if something breaks at 3 a.m., the Pi tells me before I notice.
 
 <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/katzen-analyzer.svg" alt="katzen-analyzer: two cats as the input signal, next to a running frequency spectrum" width="100%">
 
-Every feature in [katzen-analyzer](https://github.com/DanielEnki420/katzen-analyzer)
+Every feature in [katzen-analyzer]((https://danielenki420.github.io/katzen-analyzer/))
 was tested on these two. They remain unconvinced.
 
 ---
