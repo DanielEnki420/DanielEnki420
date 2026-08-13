@@ -23,6 +23,7 @@ BG = "#0D1117"
 BORDER = "#30363D"
 FG = "#E6EDF3"
 MUTED = "#8B949E"
+GOLD = "#C8973A"
 A1, A2, A3 = "#7EE787", "#58A6FF", "#D2A8FF"
 
 PHOTO_X, PHOTO_Y, PHOTO_W, PHOTO_H = 40, 44, 520, 312
@@ -60,6 +61,31 @@ def bars(rnd):
             f'repeatCount="indefinite"/>'
             f'<animate attributeName="y" values="{ys}" dur="{dur:.2f}s" '
             f'repeatCount="indefinite"/></rect>')
+    return "".join(out)
+
+
+def deco_frame():
+    """Dieselben gestuften Eckwinkel wie im Header — haelt die Karten als Serie zusammen."""
+    out = ['<g opacity="0.8">']
+    arm_outer, arm_inner = 30, 18
+    inset0, step = 20, 7
+
+    def bracket(x0, y0, sx, sy):
+        segs = []
+        for i, arm in enumerate((arm_outer, arm_inner)):
+            o = inset0 + i * step
+            ax, ay = x0 + sx * o, y0 + sy * o
+            segs.append(
+                f'<path d="M{ax:.1f},{ay + sy * arm:.1f} L{ax:.1f},{ay:.1f} '
+                f'L{ax + sx * arm:.1f},{ay:.1f}" fill="none" stroke="{GOLD}" '
+                f'stroke-width="1.3" opacity="{0.9 if i == 0 else 0.5}"/>')
+        return "".join(segs)
+
+    out.append(bracket(0, 0, 1, 1))
+    out.append(bracket(W, 0, -1, 1))
+    out.append(bracket(0, H, 1, -1))
+    out.append(bracket(W, H, -1, -1))
+    out.append('</g>')
     return "".join(out)
 
 
@@ -124,6 +150,8 @@ def build(photo_b64):
         anchor = "start" if frac == 0.0 else ("end" if frac == 1.0 else "middle")
         a(f'<text x="{x:.0f}" y="{BASE_Y + 26}" text-anchor="{anchor}" '
           f'font-family="{MONO}" font-size="13" fill="{MUTED}">{label}</text>')
+
+    a(deco_frame())
 
     a('</svg>')
     return "".join(o)

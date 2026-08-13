@@ -69,6 +69,68 @@ def spectrum(t):
     return max(0.12, envelope * detail)
 
 
+def double_border(c):
+    """Doppelte Zierlinie entlang des Kartenrands — klassisches Deco-Passepartout."""
+    out = []
+    for inset in (10, 16):
+        r = max(14 - inset, 2)
+        out.append(f'<rect x="{inset}" y="{inset}" width="{W - 2 * inset}" '
+                    f'height="{H - 2 * inset}" rx="{r}" fill="none" '
+                    f'stroke="{c["gold"]}" stroke-width="1" opacity="0.55"/>')
+    return "".join(out)
+
+
+def corner_brackets(c):
+    """Gestufte Eckwinkel, wie an Deco-Kinoplakaten der 1920er/30er.
+
+    Zwei ineinander verschachtelte L-Winkel je Ecke — der aeussere kraeftig,
+    der innere zurueckhaltender, dazwischen eine kleine Stufe.
+    """
+    out = []
+    arm_outer, arm_inner = 34, 20
+    inset0, step = 22, 8
+
+    def bracket(x0, y0, sx, sy):
+        segs = []
+        for i, arm in enumerate((arm_outer, arm_inner)):
+            o = inset0 + i * step
+            ax, ay = x0 + sx * o, y0 + sy * o
+            segs.append(
+                f'<path d="M{ax:.1f},{ay + sy * arm:.1f} L{ax:.1f},{ay:.1f} '
+                f'L{ax + sx * arm:.1f},{ay:.1f}" fill="none" '
+                f'stroke="{c["gold"]}" stroke-width="1.4" '
+                f'opacity="{0.9 if i == 0 else 0.5}"/>')
+        return "".join(segs)
+
+    out.append(bracket(0, 0, 1, 1))
+    out.append(bracket(W, 0, -1, 1))
+    out.append(bracket(0, H, 1, -1))
+    out.append(bracket(W, H, -1, -1))
+    return "".join(out)
+
+
+def sunburst(c):
+    """Strahlenkranz hinter dem Maeanderring — Deco-Sonnentor-Motiv.
+
+    Laeuft komplett um den Ring, aber kurz und mit niedriger Deckkraft,
+    damit er nicht mit dem Spektrum links davon kollidiert.
+    """
+    out = ['<g opacity="0.30" stroke-width="1">']
+    n = 24
+    r_in = R_RIM + 6
+    for i in range(n):
+        ang = math.radians(i * 360.0 / n)
+        r_out = R_RIM + (28 if i % 2 == 0 else 18)
+        x1 = LOGO_CX + r_in * math.cos(ang)
+        y1 = LOGO_CY + r_in * math.sin(ang)
+        x2 = LOGO_CX + r_out * math.cos(ang)
+        y2 = LOGO_CY + r_out * math.sin(ang)
+        out.append(f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" '
+                    f'y2="{y2:.1f}" stroke="{c["gold"]}"/>')
+    out.append('</g>')
+    return "".join(out)
+
+
 def meander_ring(c):
     """Der goldene Maeanderring mit dem Wahlspruch in der Mitte.
 
@@ -148,6 +210,8 @@ def build(theme_name):
         add(f'<line x1="0" y1="{gy}" x2="{W}" y2="{gy}" '
             f'stroke="{c["grid"]}" stroke-width="1"/>')
 
+    add(sunburst(c))
+
     mono = ("ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, "
             "'Liberation Mono', monospace")
 
@@ -189,6 +253,9 @@ def build(theme_name):
             f'</rect>')
 
     add(meander_ring(c))
+
+    add(double_border(c))
+    add(corner_brackets(c))
 
     add('</svg>')
     return "".join(out)
