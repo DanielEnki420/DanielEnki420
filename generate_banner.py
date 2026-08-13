@@ -12,7 +12,15 @@ Schreibt assets/banner-dark.svg und assets/banner-light.svg.
 import math
 import pathlib
 
-W, H = 1200, 300
+W, H = 1200, 350
+
+# Titelleiste im Stil eines Terminalfensters. Der Inhalt darunter ist um
+# CONTENT_TOP nach unten gerueckt.
+TITLE_DOT_Y = 46
+TITLE_RULE_Y = 76
+WINDOW_PATH = "~/danielenki — zsh"
+# Leicht entsaettigte Ampelfarben; das Bernstein liegt bewusst nah am Gold.
+DOT_COLORS = ("#E06C60", "#DEA123", "#61C554")
 
 THEMES = {
     "dark": {
@@ -42,11 +50,11 @@ THEMES = {
 # Der Ring war zuvor so gross, dass er fast an Kartenrand und Eckwinkel
 # stiess — die eigentliche Kartenrahmung (double_border/corner_brackets)
 # hatte dadurch kaum Luft. Kleinerer Ring, klarer Abstand ringsum.
-LOGO_CX, LOGO_CY = 998, 150
-R_RIM = 112          # aeussere Haarlinie
-R_BAND_OUT = 105     # Maeanderband aussen
-R_BAND_IN = 84       # Maeanderband innen
-R_INNER = 78         # innere Haarlinie
+LOGO_CX, LOGO_CY = 998, 210
+R_RIM = 106          # aeussere Haarlinie
+R_BAND_OUT = 99      # Maeanderband aussen
+R_BAND_IN = 78       # Maeanderband innen
+R_INNER = 72         # innere Haarlinie
 MEANDER_UNITS = 28   # Wiederholungen des Schluesselmotivs
 MOTTO = "ESSE QUAM VIDERI"
 
@@ -57,8 +65,8 @@ SPEC_X1 = 850
 BAR_W = 10
 BAR_GAP = 6
 BARS = (SPEC_X1 - MARGIN + BAR_GAP) // (BAR_W + BAR_GAP)
-BASE_Y = 262
-MAX_BAR = 62
+BASE_Y = 318
+MAX_BAR = 54
 
 
 def spectrum(t):
@@ -222,23 +230,33 @@ def build(theme_name):
     mono = ("ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, "
             "'Liberation Mono', monospace")
 
+    # Titelleiste: drei Ampelpunkte + Pfad, wie in einem Terminalfenster
+    for i, col in enumerate(DOT_COLORS):
+        add(f'<circle cx="{64 + i * 22}" cy="{TITLE_DOT_Y}" r="6.5" '
+            f'fill="{col}"/>')
+    add(f'<text x="{W / 2}" y="{TITLE_DOT_Y + 5}" text-anchor="middle" '
+        f'font-family="{mono}" font-size="15" fill="{c["muted"]}">'
+        f'{WINDOW_PATH}</text>')
+    add(f'<line x1="30" y1="{TITLE_RULE_Y}" x2="{W - 30}" y2="{TITLE_RULE_Y}" '
+        f'stroke="{c["gold"]}" stroke-width="1" opacity="0.35"/>')
+
     # Prompt
-    add(f'<text x="64" y="86" font-family="{mono}" font-size="22" '
+    add(f'<text x="64" y="134" font-family="{mono}" font-size="22" '
         f'fill="{c["a1"]}">$ whoami</text>')
 
     # Name + blinkender Cursor.
     # Monospace-Vorschub ist 0.6em, "Daniel" = 6 Zeichen -> Cursor sitzt buendig.
     name, size = "Daniel", 72
     cursor_x = 64 + len(name) * size * 0.6 + 8
-    add(f'<text x="64" y="164" font-family="{mono}" font-size="{size}" '
+    add(f'<text x="64" y="214" font-family="{mono}" font-size="{size}" '
         f'font-weight="700" fill="{c["fg"]}">{name}</text>')
-    add(f'<rect x="{cursor_x:.0f}" y="118" width="22" height="48" '
+    add(f'<rect x="{cursor_x:.0f}" y="168" width="22" height="48" '
         f'fill="{c["a2"]}">'
         f'<animate attributeName="opacity" values="1;1;0;0" dur="1.2s" '
         f'repeatCount="indefinite"/></rect>')
 
     # Tagline
-    add(f'<text x="64" y="212" font-family="{mono}" font-size="21" '
+    add(f'<text x="64" y="258" font-family="{mono}" font-size="21" '
         f'fill="{c["muted"]}">self-hosting &#183; home automation &#183; '
         f'network privacy</text>')
 
