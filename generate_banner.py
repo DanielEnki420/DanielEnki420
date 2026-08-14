@@ -12,15 +12,7 @@ Schreibt assets/banner-dark.svg und assets/banner-light.svg.
 import math
 import pathlib
 
-W, H = 1200, 350
-
-# Titelleiste im Stil eines Terminalfensters. Der Inhalt darunter ist um
-# CONTENT_TOP nach unten gerueckt.
-TITLE_DOT_Y = 46
-TITLE_RULE_Y = 76
-WINDOW_PATH = "~/danielenki — zsh"
-# Leicht entsaettigte Ampelfarben; das Bernstein liegt bewusst nah am Gold.
-DOT_COLORS = ("#E06C60", "#DEA123", "#61C554")
+W, H = 1200, 304
 
 THEMES = {
     "dark": {
@@ -52,7 +44,7 @@ THEMES = {
 # Wieder groesser UND nach rechts geschoben: der rechte Rand hat vertikal
 # in der Bandmitte keine Eckwinkel im Weg (die sitzen nur oben/unten in den
 # Ecken), da ist also mehr Platz als es auf den ersten Blick aussieht.
-LOGO_CX, LOGO_CY = 1032, 208
+LOGO_CX, LOGO_CY = 1032, 152
 R_RIM = 124          # aeussere Haarlinie
 R_BAND_OUT = 116     # Maeanderband aussen
 R_BAND_IN = 91       # Maeanderband innen
@@ -67,8 +59,8 @@ SPEC_X1 = 878
 BAR_W = 10
 BAR_GAP = 6
 BARS = (SPEC_X1 - MARGIN + BAR_GAP) // (BAR_W + BAR_GAP)
-BASE_Y = 330
-MAX_BAR = 50
+BASE_Y = 284
+MAX_BAR = 54
 
 
 def spectrum(t):
@@ -232,33 +224,23 @@ def build(theme_name):
     mono = ("ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, "
             "'Liberation Mono', monospace")
 
-    # Titelleiste: drei Ampelpunkte + Pfad, wie in einem Terminalfenster
-    for i, col in enumerate(DOT_COLORS):
-        add(f'<circle cx="{64 + i * 22}" cy="{TITLE_DOT_Y}" r="6.5" '
-            f'fill="{col}"/>')
-    add(f'<text x="{W / 2}" y="{TITLE_DOT_Y + 5}" text-anchor="middle" '
-        f'font-family="{mono}" font-size="15" fill="{c["muted"]}">'
-        f'{WINDOW_PATH}</text>')
-    add(f'<line x1="30" y1="{TITLE_RULE_Y}" x2="{W - 30}" y2="{TITLE_RULE_Y}" '
-        f'stroke="{c["gold"]}" stroke-width="1" opacity="0.35"/>')
-
     # Prompt
-    add(f'<text x="64" y="136" font-family="{mono}" font-size="25" '
+    add(f'<text x="64" y="64" font-family="{mono}" font-size="25" '
         f'fill="{c["a1"]}">$ whoami</text>')
 
     # Name + blinkender Cursor.
     # Monospace-Vorschub ist 0.6em, "Daniel" = 6 Zeichen -> Cursor sitzt buendig.
     name, size = "Daniel", 86
     cursor_x = 64 + len(name) * size * 0.6 + 9
-    add(f'<text x="64" y="224" font-family="{mono}" font-size="{size}" '
+    add(f'<text x="64" y="152" font-family="{mono}" font-size="{size}" '
         f'font-weight="700" fill="{c["fg"]}">{name}</text>')
-    add(f'<rect x="{cursor_x:.0f}" y="172" width="26" height="58" '
+    add(f'<rect x="{cursor_x:.0f}" y="100" width="26" height="58" '
         f'fill="{c["a2"]}">'
         f'<animate attributeName="opacity" values="1;1;0;0" dur="1.2s" '
         f'repeatCount="indefinite"/></rect>')
 
     # Tagline
-    add(f'<text x="64" y="270" font-family="{mono}" font-size="23" '
+    add(f'<text x="64" y="198" font-family="{mono}" font-size="23" '
         f'fill="{c["muted"]}">self-hosting &#183; home automation &#183; '
         f'network privacy</text>')
 
