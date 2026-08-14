@@ -29,46 +29,81 @@ What I publish is the part that is useful to someone other than me.
 
 Three tools with one thread — make it a little harder for noise to pass as fact.
 
-### 🛡️ [dns-blocklist-builder](https://github.com/DanielEnki420/dns-blocklist-builder)
-
-DNS blocklists against disinformation, propaganda and tracking — 11 categories,
-6 languages, exported for Pi-hole, AdGuard, dnsmasq, Unbound and RPZ.
-Runs entirely in the browser: no build step, no dependencies, works offline.
-
-[**→ Live tool**](https://danielenki420.github.io/dns-blocklist-builder/) · `HTML` `JavaScript` `Shell` · MIT
-
-### 🔍 [faktenchecker](https://github.com/DanielEnki420/faktenchecker)
-
-An AI-assisted fact-checker that fits in a single HTML file — no backend, no build
-step, no account. German and English.
-
-[**→ Live tool**](https://danielenki420.github.io/faktenchecker/) · `HTML` · MIT
-
-### <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/humanism-icon.png" width="34" height="34" align="absmiddle" alt=""> [humanism](https://github.com/DanielEnki420/humanism)
-
-A trilingual (DE / EN / IT) landing page on secular humanism — reason, science, ethics.
-Built with TanStack Start.
-
-[**→ Live site**](https://humanism.lovable.app) · `TypeScript` `CSS`
+<table>
+<tr>
+<td width="104" align="center" valign="top">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-dns-blocklist-dark.svg">
+    <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-dns-blocklist-light.svg" width="72" alt="">
+  </picture>
+</td>
+<td valign="top">
+  <h3><a href="https://github.com/DanielEnki420/dns-blocklist-builder">dns-blocklist-builder</a></h3>
+  <p>DNS blocklists against disinformation, propaganda and tracking — 11 categories, 6 languages, exported for Pi-hole, AdGuard, dnsmasq, Unbound and RPZ. Runs entirely in the browser: no build step, no dependencies, works offline.</p>
+  <p><a href="https://danielenki420.github.io/dns-blocklist-builder/"><b>&rarr; Live tool</b></a> · <code>HTML</code> <code>JavaScript</code> <code>Shell</code> · MIT</p>
+</td>
+</tr>
+<tr>
+<td width="104" align="center" valign="top">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-faktenchecker-dark.svg">
+    <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-faktenchecker-light.svg" width="72" alt="">
+  </picture>
+</td>
+<td valign="top">
+  <h3><a href="https://github.com/DanielEnki420/faktenchecker">faktenchecker</a></h3>
+  <p>An AI-assisted fact-checker that fits in a single HTML file — no backend, no build step, no account. German and English.</p>
+  <p><a href="https://danielenki420.github.io/faktenchecker/"><b>&rarr; Live tool</b></a> · <code>HTML</code> · MIT</p>
+</td>
+</tr>
+<tr>
+<td width="104" align="center" valign="top">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-humanism-dark.svg">
+    <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-humanism-light.svg" width="72" alt="">
+  </picture>
+</td>
+<td valign="top">
+  <h3><a href="https://github.com/DanielEnki420/humanism">humanism</a></h3>
+  <p>A trilingual (DE / EN / IT) landing page on secular humanism — reason, science, ethics. Built with TanStack Start.</p>
+  <p><a href="https://humanism.lovable.app"><b>&rarr; Live site</b></a> · <code>TypeScript</code> <code>CSS</code></p>
+</td>
+</tr>
+</table>
 
 ## Growing
 
 Two calculators, same idea, different medium. Nutrient schedules, pH/EC tracking and
 a grow diary that never leaves the browser.
 
-### 🌱 [dwc-grower-edition](https://github.com/DanielEnki420/dwc-grower-edition)
-
-Deep-water-culture hydroponics: brand nutrient schedules, pH/EC/temperature/ORP
-alerts, AI assistant, grow diary. Fully local — no cloud, no account.
-
-[**→ Live tool**](https://danielenki420.github.io/dwc-grower-edition/) · `HTML` · MIT
-
-### 🪴 [soil-coco-grower-edition](https://github.com/DanielEnki420/soil-coco-grower-edition)
-
-The same for soil and coco — 25 brands, pH/EC tracking, grow diary, four languages.
-Offline as well.
-
-[**→ Live tool**](https://danielenki420.github.io/soil-coco-grower-edition/) · `HTML` · MIT
+<table>
+<tr>
+<td width="104" align="center" valign="top">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-dwc-dark.svg">
+    <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-dwc-light.svg" width="72" alt="">
+  </picture>
+</td>
+<td valign="top">
+  <h3><a href="https://github.com/DanielEnki420/dwc-grower-edition">dwc-grower-edition</a></h3>
+  <p>Deep-water-culture hydroponics: brand nutrient schedules, pH/EC/temperature/ORP alerts, AI assistant, grow diary. Fully local — no cloud, no account.</p>
+  <p><a href="https://danielenki420.github.io/dwc-grower-edition/"><b>&rarr; Live tool</b></a> · <code>HTML</code> · MIT</p>
+</td>
+</tr>
+<tr>
+<td width="104" align="center" valign="top">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-soil-coco-dark.svg">
+    <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-soil-coco-light.svg" width="72" alt="">
+  </picture>
+</td>
+<td valign="top">
+  <h3><a href="https://github.com/DanielEnki420/soil-coco-grower-edition">soil-coco-grower-edition</a></h3>
+  <p>The same for soil and coco — 25 brands, pH/EC tracking, grow diary, four languages. Offline as well.</p>
+  <p><a href="https://danielenki420.github.io/soil-coco-grower-edition/"><b>&rarr; Live tool</b></a> · <code>HTML</code> · MIT</p>
+</td>
+</tr>
+</table>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/divider-dark.svg">
@@ -134,12 +169,21 @@ scripted — if something breaks at 3 a.m., the Pi tells me before I notice.
   <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/katzen-analyzer-light.svg" alt="katzen-analyzer: two cats as the input signal, next to a running frequency spectrum" width="100%">
 </picture>
 
-### 🐈 [katzen-analyzer](https://github.com/DanielEnki420/katzen-analyzer)
-
-Real-time FFT spectral analysis of cat vocalizations, with AI-assisted interpretation
-of the result. Browser-side, containerised.
-
-[**→ Live tool**](https://danielenki420.github.io/katzen-analyzer/) · `HTML` `JavaScript` `Docker` · Apache-2.0
+<table>
+<tr>
+<td width="104" align="center" valign="top">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-katzen-dark.svg">
+    <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-katzen-light.svg" width="72" alt="">
+  </picture>
+</td>
+<td valign="top">
+  <h3><a href="https://github.com/DanielEnki420/katzen-analyzer">katzen-analyzer</a></h3>
+  <p>Real-time FFT spectral analysis of cat vocalizations, with AI-assisted interpretation of the result. Browser-side, containerised.</p>
+  <p><a href="https://danielenki420.github.io/katzen-analyzer/"><b>&rarr; Live tool</b></a> · <code>HTML</code> <code>JavaScript</code> <code>Docker</code> · Apache-2.0</p>
+</td>
+</tr>
+</table>
 
 Every feature was tested on these two. They remain unconvinced.
 
@@ -155,6 +199,7 @@ Every feature was tested on these two. They remain unconvinced.
 <a href="https://github.com/DanielEnki420/DanielEnki420/blob/main/generate_stats.py"><code>stats</code></a>,
 <a href="https://github.com/DanielEnki420/DanielEnki420/blob/main/generate_illustration.py"><code>illustration</code></a>,
 <a href="https://github.com/DanielEnki420/DanielEnki420/blob/main/generate_stack.py"><code>stack</code></a>,
+<a href="https://github.com/DanielEnki420/DanielEnki420/blob/main/generate_icons.py"><code>icons</code></a>,
 <a href="https://github.com/DanielEnki420/DanielEnki420/blob/main/generate_footer.py"><code>footer</code></a>,
 <a href="https://github.com/DanielEnki420/DanielEnki420/blob/main/generate_divider.py"><code>divider</code></a>),
 each in a light and a dark variant from one shared palette in
