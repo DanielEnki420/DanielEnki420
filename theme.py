@@ -63,3 +63,41 @@ def card(c, w, h):
     """Kartengrund mit Rahmen."""
     return (f'<rect width="{w}" height="{h}" rx="14" fill="{c["bg"]}" '
             f'stroke="{c["border"]}" stroke-width="1"/>')
+
+
+# --- Schlagwort-Pillen, geteilt von Stack- und Homelab-Karte -------------
+CHAR_W = 8.4        # Vorschub der Monospace bei 14px
+PILL_FONT = 14
+PILL_H = 32
+PILL_PAD = 14       # Innenabstand je Seite
+PILL_GAP = 10
+
+
+def pill_width(label):
+    return round(len(label) * CHAR_W + 2 * PILL_PAD)
+
+
+def wrap(items, max_w):
+    """Bricht Schlagworte in Zeilen um, die in die verfuegbare Breite passen."""
+    lines, cur, cur_w = [], [], 0
+    for it in items:
+        w = pill_width(it)
+        if cur and cur_w + PILL_GAP + w > max_w:
+            lines.append(cur)
+            cur, cur_w = [it], w
+        else:
+            cur_w += (PILL_GAP + w) if cur else w
+            cur.append(it)
+    if cur:
+        lines.append(cur)
+    return lines
+
+
+def pill(c, x, y, label):
+    """Rechteckig, nicht abgerundet: Deco setzt auf Kanten."""
+    w = pill_width(label)
+    return (f'<rect x="{x}" y="{y}" width="{w}" height="{PILL_H}" fill="none" '
+            f'stroke="{c["gold"]}" stroke-width="1" opacity="0.75"/>'
+            f'<text x="{x + w / 2:.0f}" y="{y + 21}" text-anchor="middle" '
+            f'font-family="{MONO}" font-size="{PILL_FONT}" '
+            f'fill="{c["fg"]}">{label}</text>')

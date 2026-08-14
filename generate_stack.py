@@ -13,44 +13,21 @@ Schreibt assets/stack-dark.svg und assets/stack-light.svg.
 
 import pathlib
 
-from theme import MONO, THEMES, card, corner_brackets
+from theme import (MONO, PILL_GAP, PILL_H, THEMES, card, corner_brackets,
+                   pill, pill_width, wrap)
 
 W = 1200
 PAD_X = 64          # linker Textrand, wie auf der Kennzahlen-Karte
-CHAR_W = 8.4        # Vorschub der Monospace bei 14px
-FONT = 14
-PILL_H = 32
-PILL_PAD = 14       # Innenabstand je Seite
-PILL_GAP = 10
 ROW_GAP = 46
 
+# Bewusst nur die Plattformebene: die einzelnen Dienste stehen auf der
+# Homelab-Karte. Als beide Karten nebeneinander standen, wiederholten sich
+# sieben von zehn Eintraegen — hier Unterbau, dort was darauf laeuft.
 ROWS = [
-    ("INFRASTRUCTURE", ["Raspberry Pi 5", "Linux", "Docker", "Pi-hole",
-                        "Unbound", "Grafana", "Prometheus", "ioBroker",
-                        "Tailscale", "restic"]),
+    ("PLATFORM", ["Raspberry Pi 5", "Linux", "Docker", "NVMe", "Samba"]),
     ("DEVELOPMENT", ["TypeScript", "JavaScript", "Node.js", "Python",
                      "Bash"]),
 ]
-
-
-def pill_width(label):
-    return round(len(label) * CHAR_W + 2 * PILL_PAD)
-
-
-def layout(items, max_w):
-    """Bricht die Schlagworte in Zeilen um, die in die Karte passen."""
-    lines, cur, cur_w = [], [], 0
-    for it in items:
-        w = pill_width(it)
-        if cur and cur_w + PILL_GAP + w > max_w:
-            lines.append(cur)
-            cur, cur_w = [it], w
-        else:
-            cur_w += (PILL_GAP + w) if cur else w
-            cur.append(it)
-    if cur:
-        lines.append(cur)
-    return lines
 
 
 def measure():
@@ -58,7 +35,7 @@ def measure():
     y = 84
     for _, items in ROWS:
         y += 26                                    # Zeile der Rubrik
-        for _ in layout(items, W - 2 * PAD_X):
+        for _ in wrap(items, W - 2 * PAD_X):
             y += PILL_H + 10
         y += ROW_GAP - 10
     return round(y - ROW_GAP + 44)
@@ -82,18 +59,11 @@ def build(theme_name):
         o.append(f'<text x="{PAD_X}" y="{y}" font-family="{MONO}" '
                  f'font-size="15" fill="{c["gold"]}">// {title}</text>')
         y += 26
-        for line in layout(items, W - 2 * PAD_X):
+        for line in wrap(items, W - 2 * PAD_X):
             x = PAD_X
             for label in line:
-                w = pill_width(label)
-                # Rechteckig, nicht abgerundet: Deco setzt auf Kanten.
-                o.append(f'<rect x="{x}" y="{y}" width="{w}" height="{PILL_H}" '
-                         f'fill="none" stroke="{c["gold"]}" stroke-width="1" '
-                         f'opacity="0.75"/>')
-                o.append(f'<text x="{x + w / 2:.0f}" y="{y + 21}" '
-                         f'text-anchor="middle" font-family="{MONO}" '
-                         f'font-size="{FONT}" fill="{c["fg"]}">{label}</text>')
-                x += w + PILL_GAP
+                o.append(pill(c, x, y, label))
+                x += pill_width(label) + PILL_GAP
             y += PILL_H + 10
         y += ROW_GAP - 10
 

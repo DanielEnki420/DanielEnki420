@@ -120,24 +120,11 @@ a grow diary that never leaves the browser.
   <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/the-stack-light.svg" alt="Art Deco line drawing: two seated cats flanking a Raspberry Pi 5" width="100%">
 </picture>
 
-<details>
-<summary><b>~30 containers on one Raspberry Pi 5</b> — click to expand</summary>
-
-<br>
-
-| | |
-|---|---|
-| **Network & privacy** | Pi-hole · Unbound · Tailscale · CrowdSec · Fail2ban · Vaultwarden |
-| **Home automation** | ioBroker (Tuya, Zigbee, Shelly) · custom Telegram alerting |
-| **Observability** | Grafana · Prometheus · Uptime Kuma · Portainer · OLED status display |
-| **Media & knowledge** | Immich · Calibre-Web · Kiwix |
-| **Local AI** | Ollama · Open WebUI · LiteLLM |
-| **Backup** | restic → off-site (Hetzner Storage Box), nightly |
-
-Storage is NVMe, shared over Samba. Fan curve, watchdog and backup verification are
-scripted — if something breaks at 3 a.m., the Pi tells me before I notice.
-
-</details>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/homelab-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/homelab-light.svg">
+  <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/homelab-light.svg" alt="Homelab on one Raspberry Pi 5: network and privacy, home automation, observability, media, local AI and backup" width="100%">
+</picture>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/divider-dark.svg">
@@ -200,6 +187,7 @@ Every feature was tested on these two. They remain unconvinced.
 <a href="https://github.com/DanielEnki420/DanielEnki420/blob/main/generate_illustration.py"><code>illustration</code></a>,
 <a href="https://github.com/DanielEnki420/DanielEnki420/blob/main/generate_stack.py"><code>stack</code></a>,
 <a href="https://github.com/DanielEnki420/DanielEnki420/blob/main/generate_icons.py"><code>icons</code></a>,
+<a href="https://github.com/DanielEnki420/DanielEnki420/blob/main/generate_homelab.py"><code>homelab</code></a>,
 <a href="https://github.com/DanielEnki420/DanielEnki420/blob/main/generate_footer.py"><code>footer</code></a>,
 <a href="https://github.com/DanielEnki420/DanielEnki420/blob/main/generate_divider.py"><code>divider</code></a>),
 each in a light and a dark variant from one shared palette in
