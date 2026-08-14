@@ -93,10 +93,10 @@ a grow diary that never leaves the browser.
 ## Olivera — built, running, for sale
 
 My largest piece of work: a platform for leasing olive trees and selling the oil
-directly. It is deployed and technically complete — and deliberately not in
-operation. No paying customers, no revenue, Stripe and PayPal in test mode, the
-trees shown are sample data. A German trade registration is planned for January
-2027; until then no money may legally flow.
+directly. It is deployed and technically complete, and it has never been put into
+operation — no paying customers, no revenue, Stripe and PayPal still in test mode,
+the trees shown are sample data. I am not going to run it; I am selling it. A buyer
+switches the payment keys to live and takes over a finished system.
 
 <table>
 <tr>
