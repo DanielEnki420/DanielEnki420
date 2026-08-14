@@ -21,7 +21,9 @@ What I publish is the part that is useful to someone other than me.
 </picture>
 
 
-## Projects
+## Reason & evidence
+
+Three tools with one thread — make it a little harder for noise to pass as fact.
 
 ### 🛡️ [dns-blocklist-builder](https://github.com/DanielEnki420/dns-blocklist-builder)
 
@@ -31,6 +33,13 @@ Runs entirely in the browser: no build step, no dependencies, works offline.
 
 [**→ Live tool**](https://danielenki420.github.io/dns-blocklist-builder/) · `HTML` `JavaScript` `Shell` · MIT
 
+### 🔍 [faktenchecker](https://github.com/DanielEnki420/faktenchecker)
+
+An AI-assisted fact-checker that fits in a single HTML file — no backend, no build
+step, no account. German and English.
+
+[**→ Live tool**](https://danielenki420.github.io/faktenchecker/) · `HTML` · MIT
+
 ### <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/humanism-icon.png" width="34" height="34" align="absmiddle" alt=""> [humanism](https://github.com/DanielEnki420/humanism)
 
 A trilingual (DE / EN / IT) landing page on secular humanism — reason, science, ethics.
@@ -38,12 +47,24 @@ Built with TanStack Start.
 
 [**→ Live site**](https://humanism.lovable.app) · `TypeScript` `CSS`
 
-### 🐈 [katzen-analyzer](https://github.com/DanielEnki420/katzen-analyzer)
+## Growing
 
-Real-time FFT spectral analysis of cat vocalizations, with AI-assisted interpretation
-of the result. Browser-side, containerised.
+Two calculators, same idea, different medium. Nutrient schedules, pH/EC tracking and
+a grow diary that never leaves the browser.
 
-[**→ Live tool**](https://danielenki420.github.io/katzen-analyzer/) · `HTML` `JavaScript` `Docker` · Apache-2.0
+### 🌱 [dwc-grower-edition](https://github.com/DanielEnki420/dwc-grower-edition)
+
+Deep-water-culture hydroponics: brand nutrient schedules, pH/EC/temperature/ORP
+alerts, AI assistant, grow diary. Fully local — no cloud, no account.
+
+[**→ Live tool**](https://danielenki420.github.io/dwc-grower-edition/) · `HTML` · MIT
+
+### 🪴 [soil-coco-grower-edition](https://github.com/DanielEnki420/soil-coco-grower-edition)
+
+The same for soil and coco — 25 brands, pH/EC tracking, grow diary, four languages.
+Offline as well.
+
+[**→ Live tool**](https://danielenki420.github.io/soil-coco-grower-edition/) · `HTML` · MIT
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/divider-dark.svg">
@@ -112,8 +133,14 @@ scripted — if something breaks at 3 a.m., the Pi tells me before I notice.
 
 <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/katzen-analyzer.svg" alt="katzen-analyzer: two cats as the input signal, next to a running frequency spectrum" width="100%">
 
-Every feature in [katzen-analyzer](https://danielenki420.github.io/katzen-analyzer/)
-was tested on these two. They remain unconvinced.
+### 🐈 [katzen-analyzer](https://github.com/DanielEnki420/katzen-analyzer)
+
+Real-time FFT spectral analysis of cat vocalizations, with AI-assisted interpretation
+of the result. Browser-side, containerised.
+
+[**→ Live tool**](https://danielenki420.github.io/katzen-analyzer/) · `HTML` `JavaScript` `Docker` · Apache-2.0
+
+Every feature was tested on these two. They remain unconvinced.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/divider-dark.svg">
