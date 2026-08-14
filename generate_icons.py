@@ -131,10 +131,29 @@ def cat_wave():
     return "".join(p)
 
 
+def olive():
+    """olivera — Olivenzweig mit Fruechten.
+
+    Kein Wappen und kein Siegel: das Projekt ist nicht in Betrieb, das
+    Zeichen soll nichts Amtliches suggerieren.
+    """
+    p = ['<path d="M60,100 C60,74 62,54 72,36"/>']          # Zweig
+    # Blattpaare entlang des Zweigs, abwechselnd links und rechts
+    for (bx, by), (ex, ey) in (((62, 82), (40, 74)), ((64, 70), (86, 62)),
+                               ((68, 56), (46, 46)), ((72, 44), (92, 36))):
+        p.append(f'<path d="M{bx},{by} C{(bx + ex) / 2 - 4},{by - 12} '
+                 f'{ex + 4},{ey - 6} {ex},{ey} '
+                 f'C{ex + 6},{ey + 8} {bx + 4},{by + 6} {bx},{by} Z"/>')
+    for cx_, cy_, r in ((52, 62, 5.5), (76, 78, 5.5), (58, 40, 4.5)):
+        p.append(f'<circle cx="{cx_}" cy="{cy_}" r="{r}"/>')  # Oliven
+    return "".join(p)
+
+
 ICONS = {
     "dns-blocklist": shield,
     "faktenchecker": magnifier,
     "humanism": humanitas,
+    "olivera": olive,
     "dwc": dwc,
     "soil-coco": soil,
     "katzen": cat_wave,

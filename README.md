@@ -90,6 +90,42 @@ a grow diary that never leaves the browser.
 </tr>
 </table>
 
+## Olivera — built, running, for sale
+
+My largest piece of work: a platform for leasing olive trees and selling the oil
+directly. It is deployed and technically complete — and deliberately not in
+operation. No paying customers, no revenue, Stripe and PayPal in test mode, the
+trees shown are sample data. A German trade registration is planned for January
+2027; until then no money may legally flow.
+
+<table>
+<tr>
+<td width="104" align="center" valign="top">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-olivera-dark.svg">
+    <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-olivera-light.svg" width="72" alt="">
+  </picture>
+</td>
+<td valign="top">
+  <h3>olivera</h3>
+  <p><b>Frontend</b> — three Next.js 16 apps on the App Router (customer, admin,
+  farmer portal), React 19, TypeScript in strict mode, Tailwind and shadcn/ui,
+  Zustand and TanStack Query, five languages via next-intl.</p>
+  <p><b>Backend</b> — four Hono services (API, oracle, notifications, indexer) on
+  Node 20, PostgreSQL 16 with Drizzle ORM, Redis with BullMQ for queues.</p>
+  <p><b>Payments and mail</b> — Stripe and PayPal (both sandbox), Resend, Sentry.</p>
+  <p><b>Certificates</b> — each lease gets an Ed25519 signature, publicly
+  verifiable at <code>/verify</code> without a blockchain.</p>
+  <p><b>Operations</b> — Vercel for the frontends, self-hosted Coolify on a
+  Hetzner box for the services, nightly off-site backups, CI on every pull request.</p>
+  <p>~86,500 lines of TypeScript across a pnpm/Turborepo monorepo.</p>
+  <p><a href="https://www.oli-vera.eu"><b>&rarr; Live platform</b></a> ·
+  <code>TypeScript</code> <code>Next.js</code> <code>Hono</code>
+  <code>PostgreSQL</code> · private repo</p>
+</td>
+</tr>
+</table>
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/divider-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/divider-light.svg">
