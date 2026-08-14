@@ -47,26 +47,28 @@ THEMES = {
 }
 
 # --- Logo: Meander-Ring mit dem Wahlspruch -------------------------------
-# Der Ring war zuvor so gross, dass er fast an Kartenrand und Eckwinkel
-# stiess — die eigentliche Kartenrahmung (double_border/corner_brackets)
-# hatte dadurch kaum Luft. Kleinerer Ring, klarer Abstand ringsum.
-LOGO_CX, LOGO_CY = 998, 210
-R_RIM = 106          # aeussere Haarlinie
-R_BAND_OUT = 99      # Maeanderband aussen
-R_BAND_IN = 78       # Maeanderband innen
-R_INNER = 72         # innere Haarlinie
+# Nach der letzten Verkleinerung blieb rechts vom Ring ein grosser leerer
+# Streifen bis zur Eckenrahmung — der Ring wirkte verloren in der Karte.
+# Wieder groesser UND nach rechts geschoben: der rechte Rand hat vertikal
+# in der Bandmitte keine Eckwinkel im Weg (die sitzen nur oben/unten in den
+# Ecken), da ist also mehr Platz als es auf den ersten Blick aussieht.
+LOGO_CX, LOGO_CY = 1032, 208
+R_RIM = 124          # aeussere Haarlinie
+R_BAND_OUT = 116     # Maeanderband aussen
+R_BAND_IN = 91       # Maeanderband innen
+R_INNER = 84         # innere Haarlinie
 MEANDER_UNITS = 28   # Wiederholungen des Schluesselmotivs
 MOTTO = "ESSE QUAM VIDERI"
 
 # Das Spektrum laeuft als Fussleiste unter dem Textblock und endet vor dem
 # Logo-Ring, damit sich beide nicht ins Gehege kommen.
 MARGIN = 64
-SPEC_X1 = 850
+SPEC_X1 = 878
 BAR_W = 10
 BAR_GAP = 6
 BARS = (SPEC_X1 - MARGIN + BAR_GAP) // (BAR_W + BAR_GAP)
-BASE_Y = 318
-MAX_BAR = 54
+BASE_Y = 330
+MAX_BAR = 50
 
 
 def spectrum(t):
@@ -183,9 +185,9 @@ def meander_ring(c):
     # textLength/lengthAdjust nagelt die Breite fest: der Spruch bleibt im
     # Innenkreis, auch wenn beim Betrachter eine andere Serife einspringt.
     serif = "Georgia, 'Times New Roman', 'Iowan Old Style', serif"
-    text_w = 2 * R_INNER - 30
-    add(f'<text x="{LOGO_CX}" y="{LOGO_CY + 5}" text-anchor="middle" '
-        f'font-family="{serif}" font-size="14" '
+    text_w = 2 * R_INNER - 32
+    add(f'<text x="{LOGO_CX}" y="{LOGO_CY + 6}" text-anchor="middle" '
+        f'font-family="{serif}" font-size="16" '
         f'textLength="{text_w}" lengthAdjust="spacingAndGlyphs" '
         f'fill="{c["gold"]}">{MOTTO}</text>')
 
@@ -241,22 +243,22 @@ def build(theme_name):
         f'stroke="{c["gold"]}" stroke-width="1" opacity="0.35"/>')
 
     # Prompt
-    add(f'<text x="64" y="134" font-family="{mono}" font-size="22" '
+    add(f'<text x="64" y="136" font-family="{mono}" font-size="25" '
         f'fill="{c["a1"]}">$ whoami</text>')
 
     # Name + blinkender Cursor.
     # Monospace-Vorschub ist 0.6em, "Daniel" = 6 Zeichen -> Cursor sitzt buendig.
-    name, size = "Daniel", 72
-    cursor_x = 64 + len(name) * size * 0.6 + 8
-    add(f'<text x="64" y="214" font-family="{mono}" font-size="{size}" '
+    name, size = "Daniel", 86
+    cursor_x = 64 + len(name) * size * 0.6 + 9
+    add(f'<text x="64" y="224" font-family="{mono}" font-size="{size}" '
         f'font-weight="700" fill="{c["fg"]}">{name}</text>')
-    add(f'<rect x="{cursor_x:.0f}" y="168" width="22" height="48" '
+    add(f'<rect x="{cursor_x:.0f}" y="172" width="26" height="58" '
         f'fill="{c["a2"]}">'
         f'<animate attributeName="opacity" values="1;1;0;0" dur="1.2s" '
         f'repeatCount="indefinite"/></rect>')
 
     # Tagline
-    add(f'<text x="64" y="258" font-family="{mono}" font-size="21" '
+    add(f'<text x="64" y="270" font-family="{mono}" font-size="23" '
         f'fill="{c["muted"]}">self-hosting &#183; home automation &#183; '
         f'network privacy</text>')
 
