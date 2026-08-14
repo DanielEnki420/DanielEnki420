@@ -16,7 +16,7 @@ Three tools with one thread — make it a little harder for noise to pass as fac
 
 <table>
 <tr>
-<td width="104" align="center" valign="top">
+<td width="104" align="center" valign="middle">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-dns-blocklist-dark.svg">
     <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-dns-blocklist-light.svg" width="72" alt="">
@@ -29,7 +29,7 @@ Three tools with one thread — make it a little harder for noise to pass as fac
 </td>
 </tr>
 <tr>
-<td width="104" align="center" valign="top">
+<td width="104" align="center" valign="middle">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-faktenchecker-dark.svg">
     <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-faktenchecker-light.svg" width="72" alt="">
@@ -42,7 +42,7 @@ Three tools with one thread — make it a little harder for noise to pass as fac
 </td>
 </tr>
 <tr>
-<td width="104" align="center" valign="top">
+<td width="104" align="center" valign="middle">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-humanism-dark.svg">
     <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-humanism-light.svg" width="72" alt="">
@@ -63,7 +63,7 @@ a grow diary that never leaves the browser.
 
 <table>
 <tr>
-<td width="104" align="center" valign="top">
+<td width="104" align="center" valign="middle">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-dwc-dark.svg">
     <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-dwc-light.svg" width="72" alt="">
@@ -76,7 +76,7 @@ a grow diary that never leaves the browser.
 </td>
 </tr>
 <tr>
-<td width="104" align="center" valign="top">
+<td width="104" align="center" valign="middle">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-soil-coco-dark.svg">
     <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-soil-coco-light.svg" width="72" alt="">
@@ -100,7 +100,7 @@ switches the payment keys to live and takes over a finished system.
 
 <table>
 <tr>
-<td width="104" align="center" valign="top">
+<td width="104" align="center" valign="middle">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-olivera-dark.svg">
     <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-olivera-light.svg" width="72" alt="">
@@ -174,7 +174,7 @@ switches the payment keys to live and takes over a finished system.
 
 <table>
 <tr>
-<td width="104" align="center" valign="top">
+<td width="104" align="center" valign="middle">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-katzen-dark.svg">
     <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-katzen-light.svg" width="72" alt="">

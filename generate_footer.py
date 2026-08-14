@@ -81,8 +81,16 @@ def build(photo_b64, theme_name):
     a(f'<image xlink:href="data:image/jpeg;base64,{photo_b64}" '
       f'x="{PHOTO_X}" y="{PHOTO_Y}" width="{PHOTO_W}" height="{PHOTO_H}" '
       f'clip-path="url(#photoClip)" preserveAspectRatio="xMidYMid slice"/>')
+    # Goldrahmen statt grauer Haarlinie: doppelt gefuehrt wie das
+    # Passepartout des Banners, damit das Foto zum Rest der Seite gehoert
+    # und nicht wie ein eingeklebter Fremdkoerper wirkt.
     a(f'<rect x="{PHOTO_X}" y="{PHOTO_Y}" width="{PHOTO_W}" height="{PHOTO_H}" '
-      f'rx="10" fill="none" stroke="{c["border"]}" stroke-width="1"/>')
+      f'rx="10" fill="none" stroke="{c["gold"]}" stroke-width="2.2"/>')
+    # Die zweite Linie laeuft aussen herum, nicht innen: ueber dem Foto ging
+    # sie im Bildinhalt unter, auf dem Kartengrund liest sie sich klar.
+    a(f'<rect x="{PHOTO_X - 7}" y="{PHOTO_Y - 7}" width="{PHOTO_W + 14}" '
+      f'height="{PHOTO_H + 14}" rx="14" fill="none" stroke="{c["gold"]}" '
+      f'stroke-width="1" opacity="0.55"/>')
 
     # Pulsierender Aufnahmepunkt auf dem Foto
     a(f'<g><circle cx="{PHOTO_X + 22}" cy="{PHOTO_Y + 22}" r="5" fill="{c["alert"]}">'
