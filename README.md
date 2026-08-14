@@ -31,7 +31,7 @@ Runs entirely in the browser: no build step, no dependencies, works offline.
 
 [**→ Live tool**](https://danielenki420.github.io/dns-blocklist-builder/) · `HTML` `JavaScript` `Shell` · MIT
 
-### 🌍 [humanism](https://github.com/DanielEnki420/humanism)
+### <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/humanism-icon.png" width="34" height="34" align="absmiddle" alt=""> [humanism](https://github.com/DanielEnki420/humanism)
 
 A trilingual (DE / EN / IT) landing page on secular humanism — reason, science, ethics.
 Built with TanStack Start.
