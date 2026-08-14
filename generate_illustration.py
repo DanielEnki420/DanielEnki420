@@ -8,21 +8,15 @@ Tutanchamun-Grabung 1922 war Aegyptisierendes in den Zwanzigern ueberall.
 
     python3 generate_illustration.py
 
-Schreibt assets/the-stack.svg.
+Schreibt assets/the-stack-dark.svg und assets/the-stack-light.svg.
 """
 
 import math
 import pathlib
 
+from theme import MONO, THEMES, card, corner_brackets
+
 W, H = 1200, 420
-
-BG = "#0D1117"
-BORDER = "#30363D"
-GOLD = "#C8973A"
-MUTED = "#8B949E"
-
-MONO = ("ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, "
-        "'Liberation Mono', monospace")
 
 GROUND_Y = 322
 
@@ -102,14 +96,14 @@ def raspberry_pi():
     return "".join(p)
 
 
-def sun_fan():
+def sun_fan(c):
     """Halbrunder Strahlenfaecher ueber der Szene — Deco-Sonnentor."""
     cx, cy = W / 2, GROUND_Y
     # Deutlich weiter aussen als im ersten Entwurf: dort lag der Faecher so
     # dicht an der Platine, dass er als Gekritzel gelesen wurde statt als
     # eigenes Motiv. r_in liegt jetzt sicher jenseits der Platinenecken.
     r_in, r_out = 236, 268
-    out = [f'<g opacity="0.32" stroke="{GOLD}" stroke-width="1.4">']
+    out = [f'<g opacity="0.32" stroke="{c["gold"]}" stroke-width="1.4">']
     n = 23
     for i in range(n):
         # 202 bis 338 Grad: oberer Bogen, laesst die Katzen frei
@@ -123,41 +117,26 @@ def sun_fan():
     return "".join(out)
 
 
-def deco_frame():
-    out = ['<g opacity="0.8">']
-    for x0, y0, sx, sy in ((0, 0, 1, 1), (W, 0, -1, 1),
-                           (0, H, 1, -1), (W, H, -1, -1)):
-        for i, arm in enumerate((30, 18)):
-            o = 20 + i * 7
-            ax, ay = x0 + sx * o, y0 + sy * o
-            out.append(f'<path d="M{ax:.1f},{ay + sy * arm:.1f} '
-                       f'L{ax:.1f},{ay:.1f} L{ax + sx * arm:.1f},{ay:.1f}" '
-                       f'fill="none" stroke="{GOLD}" stroke-width="1.3" '
-                       f'opacity="{0.9 if i == 0 else 0.5}"/>')
-    out.append('</g>')
-    return "".join(out)
-
-
-def build():
+def build(theme_name):
+    c = THEMES[theme_name]
     o = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" '
          f'width="{W}" height="{H}" role="img" '
          f'aria-label="Linienzeichnung im Art-Deco-Stil: zwei sitzende Katzen '
          f'flankieren einen Raspberry Pi 5, darueber ein Strahlenfaecher">']
-    o.append(f'<rect width="{W}" height="{H}" rx="14" fill="{BG}" '
-             f'stroke="{BORDER}" stroke-width="1"/>')
+    o.append(card(c, W, H))
 
-    o.append(sun_fan())
+    o.append(sun_fan(c))
 
     # Standlinie mit Rautenabschluss an beiden Enden
     o.append(f'<line x1="150" y1="{GROUND_Y}" x2="1050" y2="{GROUND_Y}" '
-             f'stroke="{GOLD}" stroke-width="1.2" opacity="0.55"/>')
+             f'stroke="{c["gold"]}" stroke-width="1.2" opacity="0.55"/>')
     for dx in (150, 1050):
         o.append(f'<rect x="{dx - 4}" y="{GROUND_Y - 4}" width="8" height="8" '
-                 f'transform="rotate(45 {dx} {GROUND_Y})" fill="{GOLD}" '
+                 f'transform="rotate(45 {dx} {GROUND_Y})" fill="{c["gold"]}" '
                  f'opacity="0.7"/>')
 
     # Platine, mittig auf der Standlinie
-    o.append(f'<g fill="none" stroke="{GOLD}" stroke-width="1.5" '
+    o.append(f'<g fill="none" stroke="{c["gold"]}" stroke-width="1.5" '
              f'stroke-linejoin="round" opacity="0.95" '
              f'transform="translate(450 {GROUND_Y - 210}) scale(1)">'
              f'{raspberry_pi()}</g>')
@@ -166,21 +145,21 @@ def build():
     scale = 1.12
     cat_h = 170 * scale
     ty = GROUND_Y - cat_h
-    o.append(f'<g fill="none" stroke="{GOLD}" stroke-width="1.6" '
+    o.append(f'<g fill="none" stroke="{c["gold"]}" stroke-width="1.6" '
              f'stroke-linejoin="round" stroke-linecap="round" '
              f'transform="translate(196 {ty:.1f}) scale({scale})">'
              f'{cat()}</g>')
-    o.append(f'<g fill="none" stroke="{GOLD}" stroke-width="1.6" '
+    o.append(f'<g fill="none" stroke="{c["gold"]}" stroke-width="1.6" '
              f'stroke-linejoin="round" stroke-linecap="round" '
              f'transform="translate(1004 {ty:.1f}) scale({-scale} {scale})">'
              f'{cat()}</g>')
 
     o.append(f'<text x="{W / 2}" y="372" text-anchor="middle" '
-             f'font-family="{MONO}" font-size="15" fill="{MUTED}">'
+             f'font-family="{MONO}" font-size="15" fill="{c["muted"]}">'
              f'~30 containers &#183; one Raspberry Pi 5 &#183; '
              f'two supervisors</text>')
 
-    o.append(deco_frame())
+    o.append(corner_brackets(c, W, H))
     o.append('</svg>')
     return "".join(o)
 
@@ -188,9 +167,10 @@ def build():
 def main():
     assets = pathlib.Path(__file__).parent / "assets"
     assets.mkdir(exist_ok=True)
-    out = assets / "the-stack.svg"
-    out.write_text(build(), encoding="utf-8")
-    print(f"{out}  ({out.stat().st_size} B)")
+    for name in THEMES:
+        out = assets / f"the-stack-{name}.svg"
+        out.write_text(build(name), encoding="utf-8")
+        print(f"{out}  ({out.stat().st_size} B)")
 
 
 if __name__ == "__main__":

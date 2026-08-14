@@ -12,7 +12,7 @@ Schreibt assets/divider-dark.svg und assets/divider-light.svg.
 import pathlib
 
 W, H = 1200, 32
-GOLD = {"dark": "#C8973A", "light": "#8A6A1F"}
+from theme import THEMES
 
 
 def build(gold):
@@ -37,9 +37,9 @@ def build(gold):
 def main():
     assets = pathlib.Path(__file__).parent / "assets"
     assets.mkdir(exist_ok=True)
-    for name, gold in GOLD.items():
+    for name, c in THEMES.items():
         path = assets / f"divider-{name}.svg"
-        path.write_text(build(gold), encoding="utf-8")
+        path.write_text(build(c["gold"]), encoding="utf-8")
         print(f"{path}  ({path.stat().st_size} B)")
 
 

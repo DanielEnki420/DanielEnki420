@@ -12,7 +12,11 @@ What I publish is the part that is useful to someone other than me.
 
 ## By the numbers
 
-<img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stats.svg" alt="Kennzahlen: 30 Repositories (7 oeffentlich), 8 Sterne, rund 30 Container auf einem Raspberry Pi 5" width="100%">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stats-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stats-light.svg">
+  <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stats-light.svg" alt="Figures: 30 repositories (7 public), 8 stars, around 30 containers on one Raspberry Pi 5" width="100%">
+</picture>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/divider-dark.svg">
@@ -75,7 +79,11 @@ Offline as well.
 
 ## The homelab
 
-<img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/the-stack.svg" alt="Linienzeichnung im Art-Deco-Stil: zwei sitzende Katzen flankieren einen Raspberry Pi 5" width="100%">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/the-stack-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/the-stack-light.svg">
+  <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/the-stack-light.svg" alt="Art Deco line drawing: two seated cats flanking a Raspberry Pi 5" width="100%">
+</picture>
 
 <details>
 <summary><b>~30 containers on one Raspberry Pi 5</b> — click to expand</summary>
@@ -105,22 +113,11 @@ scripted — if something breaks at 3 a.m., the Pi tells me before I notice.
 
 ## Stack
 
-**Infrastructure**
-
-![Raspberry Pi](https://img.shields.io/badge/Raspberry_Pi_5-C51A4A?style=for-the-badge&logo=raspberrypi&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Pi-hole](https://img.shields.io/badge/Pi--hole-96060C?style=for-the-badge&logo=pihole&logoColor=white)
-![Grafana](https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white)
-![ioBroker](https://img.shields.io/badge/ioBroker-3399CC?style=for-the-badge)
-
-**Development**
-
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stack-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stack-light.svg">
+  <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stack-light.svg" alt="Stack: Raspberry Pi 5, Linux, Docker, Pi-hole, Unbound, Grafana, Prometheus, ioBroker, Tailscale, restic; TypeScript, JavaScript, Node.js, Python, Bash" width="100%">
+</picture>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/divider-dark.svg">
@@ -131,7 +128,11 @@ scripted — if something breaks at 3 a.m., the Pi tells me before I notice.
 
 ## The test subjects
 
-<img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/katzen-analyzer.svg" alt="katzen-analyzer: two cats as the input signal, next to a running frequency spectrum" width="100%">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/katzen-analyzer-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/katzen-analyzer-light.svg">
+  <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/katzen-analyzer-light.svg" alt="katzen-analyzer: two cats as the input signal, next to a running frequency spectrum" width="100%">
+</picture>
 
 ### 🐈 [katzen-analyzer](https://github.com/DanielEnki420/katzen-analyzer)
 
@@ -153,6 +154,10 @@ Every feature was tested on these two. They remain unconvinced.
 (<a href="https://github.com/DanielEnki420/DanielEnki420/blob/main/generate_banner.py"><code>banner</code></a>,
 <a href="https://github.com/DanielEnki420/DanielEnki420/blob/main/generate_stats.py"><code>stats</code></a>,
 <a href="https://github.com/DanielEnki420/DanielEnki420/blob/main/generate_illustration.py"><code>illustration</code></a>,
-<a href="https://github.com/DanielEnki420/DanielEnki420/blob/main/generate_footer.py"><code>footer</code></a>) —
-no external service, nothing to rate-limit, and the header follows your GitHub theme.
-The figures are a snapshot from the last run, not a live feed.</sub>
+<a href="https://github.com/DanielEnki420/DanielEnki420/blob/main/generate_stack.py"><code>stack</code></a>,
+<a href="https://github.com/DanielEnki420/DanielEnki420/blob/main/generate_footer.py"><code>footer</code></a>,
+<a href="https://github.com/DanielEnki420/DanielEnki420/blob/main/generate_divider.py"><code>divider</code></a>),
+each in a light and a dark variant from one shared palette in
+<a href="https://github.com/DanielEnki420/DanielEnki420/blob/main/theme.py"><code>theme.py</code></a>.
+Nothing is loaded from a third party, so there is nothing to rate-limit and the whole
+page follows your GitHub theme. The figures are a snapshot from the last run, not a live feed.</sub>

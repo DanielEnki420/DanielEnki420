@@ -12,31 +12,9 @@ Schreibt assets/banner-dark.svg und assets/banner-light.svg.
 import math
 import pathlib
 
-W, H = 1200, 304
+from theme import MONO, SERIF, THEMES
 
-THEMES = {
-    "dark": {
-        "bg": "#0D1117",
-        "grid": "#161B22",
-        "fg": "#E6EDF3",
-        "muted": "#8B949E",
-        "a1": "#7EE787",
-        "a2": "#58A6FF",
-        "a3": "#D2A8FF",
-        "gold": "#C8973A",
-    },
-    "light": {
-        "bg": "#FFFFFF",
-        "grid": "#F0F3F6",
-        "fg": "#1F2328",
-        "muted": "#59636E",
-        "a1": "#1A7F37",
-        "a2": "#0969DA",
-        "a3": "#8250DF",
-        # Auf Weiss braucht das Gold mehr Tiefe, sonst verschwindet der Ring.
-        "gold": "#8A6A1F",
-    },
-}
+W, H = 1200, 304
 
 # --- Logo: Meander-Ring mit dem Wahlspruch -------------------------------
 # Nach der letzten Verkleinerung blieb rechts vom Ring ein grosser leerer
@@ -176,10 +154,9 @@ def meander_ring(c):
     # Wahlspruch — Versalien, gesperrt, wie auf dem Original.
     # textLength/lengthAdjust nagelt die Breite fest: der Spruch bleibt im
     # Innenkreis, auch wenn beim Betrachter eine andere Serife einspringt.
-    serif = "Georgia, 'Times New Roman', 'Iowan Old Style', serif"
     text_w = 2 * R_INNER - 32
     add(f'<text x="{LOGO_CX}" y="{LOGO_CY + 6}" text-anchor="middle" '
-        f'font-family="{serif}" font-size="16" '
+        f'font-family="{SERIF}" font-size="16" '
         f'textLength="{text_w}" lengthAdjust="spacingAndGlyphs" '
         f'fill="{c["gold"]}">{MOTTO}</text>')
 
@@ -221,18 +198,15 @@ def build(theme_name):
 
     add(sunburst(c))
 
-    mono = ("ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, "
-            "'Liberation Mono', monospace")
-
     # Prompt
-    add(f'<text x="64" y="64" font-family="{mono}" font-size="25" '
+    add(f'<text x="64" y="64" font-family="{MONO}" font-size="25" '
         f'fill="{c["a1"]}">$ whoami</text>')
 
     # Name + blinkender Cursor.
     # Monospace-Vorschub ist 0.6em, "Daniel" = 6 Zeichen -> Cursor sitzt buendig.
     name, size = "Daniel", 86
     cursor_x = 64 + len(name) * size * 0.6 + 9
-    add(f'<text x="64" y="152" font-family="{mono}" font-size="{size}" '
+    add(f'<text x="64" y="152" font-family="{MONO}" font-size="{size}" '
         f'font-weight="700" fill="{c["fg"]}">{name}</text>')
     add(f'<rect x="{cursor_x:.0f}" y="100" width="26" height="58" '
         f'fill="{c["a2"]}">'
@@ -240,7 +214,7 @@ def build(theme_name):
         f'repeatCount="indefinite"/></rect>')
 
     # Tagline
-    add(f'<text x="64" y="198" font-family="{mono}" font-size="23" '
+    add(f'<text x="64" y="198" font-family="{MONO}" font-size="23" '
         f'fill="{c["muted"]}">self-hosting &#183; home automation &#183; '
         f'network privacy</text>')
 
