@@ -94,8 +94,9 @@ a grow diary that never leaves the browser.
 
 My largest piece of work: a platform for leasing olive trees and selling the oil
 directly. It is deployed and technically complete, and it has never been put into
-operation — no paying customers, no revenue, Stripe and PayPal still in test mode,
-the trees shown are sample data. I am not going to run it; I am selling it. A buyer
+operation — no paying customers, no revenue, Stripe in test mode and PayPal
+implemented but currently disabled, the trees shown are sample data. I am not going
+to run it; I am selling it. A buyer
 switches the payment keys to live and takes over a finished system.
 
 <table>
@@ -113,7 +114,8 @@ switches the payment keys to live and takes over a finished system.
   Zustand and TanStack Query, five languages via next-intl.</p>
   <p><b>Backend</b> — four Hono services (API, oracle, notifications, indexer) on
   Node 20, PostgreSQL 16 with Drizzle ORM, Redis with BullMQ for queues.</p>
-  <p><b>Payments and mail</b> — Stripe and PayPal (both sandbox), Resend, Sentry.</p>
+  <p><b>Payments and mail</b> — Stripe (test mode) and PayPal (implemented, currently
+  disabled), Resend, Sentry.</p>
   <p><b>Certificates</b> — each lease gets an Ed25519 signature, publicly
   verifiable at <code>/verify</code> without a blockchain.</p>
   <p><b>Operations</b> — Vercel for the frontends, self-hosted Coolify on a
