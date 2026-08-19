@@ -122,7 +122,8 @@ switches the payment keys to live and takes over a finished system.
   Hetzner box for the services, nightly off-site backups, CI on every pull request.</p>
   <p>~86,500 lines of TypeScript across a pnpm/Turborepo monorepo.</p>
   <p><a href="https://www.oli-vera.eu"><b>&rarr; Live platform</b></a> ·
-  <a href="https://app.littleexits.com/project/olivera-olive-tree-leasing-platform"><b>&rarr; For sale on Little Exits</b></a></p>
+  <a href="https://app.littleexits.com/project/olivera-olive-tree-leasing-platform"><b>&rarr; For sale on Little Exits</b></a> ·
+  <a href="https://www.prerevmarket.com/production/olivera"><b>&rarr; For sale on PreRevMarket</b></a></p>
   <p><code>TypeScript</code> <code>Next.js</code> <code>Hono</code>
   <code>PostgreSQL</code> · private repo</p>
 </td>
