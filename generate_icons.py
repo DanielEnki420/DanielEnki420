@@ -149,7 +149,22 @@ def olive():
     return "".join(p)
 
 
+def hollow_check():
+    """correctness-checks — grosser Haken ueber gestricheltem Boden.
+
+    Die Geschichte des Projekts in einem Bild: der Haken steht auf nichts.
+    Bewusst nur zwei Elemente. Ein Versuch mit zusaetzlicher Kiste drumherum
+    lief bei 44px zu, dieselbe Lehre wie beim Schild.
+    """
+    p = ['<path d="M32,62 L52,82 L90,34" stroke-width="4.2" '
+         'stroke-linecap="round" stroke-linejoin="round"/>']
+    p.append('<path d="M26,96 L94,96" stroke-width="2.6" '
+             'stroke-dasharray="7 7" stroke-linecap="round" opacity="0.75"/>')
+    return "".join(p)
+
+
 ICONS = {
+    "correctness-checks": hollow_check,
     "dns-blocklist": shield,
     "faktenchecker": magnifier,
     "humanism": humanitas,

@@ -7,12 +7,13 @@
 > **Esse quam videri** — to be, rather than to seem.
 
 I build small, self-contained tools and run them myself. Most of it lives on a
-Raspberry Pi 5 in my living room — around 30 containers, no cloud, backed up off-site.
+Raspberry Pi 5 in my living room — 35 containers, no cloud, backed up off-site.
 What I publish is the part that is useful to someone other than me.
 
 ## Reason & evidence
 
-Three tools with one thread — make it a little harder for noise to pass as fact.
+Four tools with one thread — make it a little harder for something to pass as
+what it is not.
 
 <table>
 <tr>
@@ -41,6 +42,25 @@ Three tools with one thread — make it a little harder for noise to pass as fac
   <p><a href="https://danielenki420.github.io/faktenchecker/"><b>&rarr; Live tool</b></a> · <code>HTML</code> · MIT</p>
 </td>
 </tr>
+<tr>
+<td width="104" align="center" valign="middle">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-correctness-checks-dark.svg">
+    <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-correctness-checks-light.svg" width="72" alt="">
+  </picture>
+</td>
+<td valign="top">
+  <h3><a href="https://github.com/DanielEnki420/correctness-checks">correctness-checks</a></h3>
+  <p>Monitoring templates that ask whether a service still does its job, not
+  whether it answers. A routine audit found three of mine dead for months behind
+  green dashboards: Samba refusing every login, backups that were valid archives
+  without the database, Portainer serving HTTP 200 with no Docker connection.
+  Every check reports to a push monitor that turns red on its own when the report
+  stops arriving.</p>
+  <p><code>Shell</code> · MIT</p>
+</td>
+</tr>
+
 <tr>
 <td width="104" align="center" valign="middle">
   <picture>
@@ -198,7 +218,7 @@ Every feature was tested on these two. They remain unconvinced.
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stats-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stats-light.svg">
-  <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stats-light.svg" alt="Figures: 30 repositories (7 public), 8 stars, around 30 containers on one Raspberry Pi 5" width="100%">
+  <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stats-light.svg" alt="Figures: 31 repositories (8 public), 8 stars, 35 containers on one Raspberry Pi 5" width="100%">
 </picture>
 
 <picture>

@@ -51,9 +51,10 @@ ROWS = [
     ("BACKUP", ["restic &#8594; off-site, nightly"]),
 ]
 
-CAPTION = ("~30 containers &#183; one Raspberry Pi 5 &#183; two supervisors")
-NOTE = ("storage NVMe over Samba &#183; fan curve, watchdog and backup "
-        "verification are scripted &#183; ~30 containers, self-reported")
+CAPTION = ("35 containers &#183; one Raspberry Pi 5 &#183; two supervisors")
+NOTE = ("35 monitors, 13 of them dead-man switches &#183; two restores "
+        "proven daily, not described &#183; 59 automated tests &#183; "
+        "self-reported")
 
 
 def cat():

@@ -24,12 +24,12 @@ from theme import MONO, THEMES, card, corner_brackets
 W, H = 1200, 300
 
 # Stand, falls die API nicht erreichbar ist (--offline oder Netzfehler).
-FALLBACK = {"repos_total": 30, "repos_public": 7, "stars": 8, "date": "2026-08-13"}
+FALLBACK = {"repos_total": 31, "repos_public": 8, "stars": 10, "date": "2026-09-03"}
 
 # Der Heimserver-Block ist selbst berichtet, nicht aus einer API — deshalb
 # stehen hier bewusst Naeherungen ("~30") statt exakter Zahlen.
 HOMELAB = [
-    ("containers", "~30"),
+    ("containers", "35"),
     ("host", "1x Raspberry Pi 5"),
     ("storage", "NVMe / Samba"),
     ("backup", "nightly, off-site"),
@@ -99,7 +99,7 @@ def build(d, theme_name):
     o = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" '
          f'width="{W}" height="{H}" role="img" '
          f'aria-label="Figures: {d["repos_total"]} repositories, '
-         f'{d["stars"]} stars, around 30 containers on one Raspberry Pi 5">']
+         f'{d["stars"]} stars, 35 containers on one Raspberry Pi 5">']
     o.append(card(c, W, H))
     o.append(f'<text x="64" y="50" font-family="{MONO}" font-size="20" '
              f'font-weight="700" fill="{c["fg"]}">$ stat --all</text>')
