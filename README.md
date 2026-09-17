@@ -19,19 +19,6 @@ what it is not.
 <tr>
 <td width="104" align="center" valign="middle">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-dns-blocklist-dark.svg">
-    <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-dns-blocklist-light.svg" width="72" alt="">
-  </picture>
-</td>
-<td valign="top">
-  <h3><a href="https://github.com/DanielEnki420/dns-blocklist-builder">dns-blocklist-builder</a></h3>
-  <p>DNS blocklists against disinformation, propaganda and tracking — 11 categories, 6 languages, exported for Pi-hole, AdGuard, dnsmasq, Unbound and RPZ. Runs entirely in the browser: no build step, no dependencies, works offline.</p>
-  <p><a href="https://danielenki420.github.io/dns-blocklist-builder/"><b>&rarr; Live tool</b></a> · <code>HTML</code> <code>JavaScript</code> <code>Shell</code> · MIT</p>
-</td>
-</tr>
-<tr>
-<td width="104" align="center" valign="middle">
-  <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-faktenchecker-dark.svg">
     <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-faktenchecker-light.svg" width="72" alt="">
   </picture>
