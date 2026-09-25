@@ -32,21 +32,6 @@ def ring(c):
             f'stroke="{c["gold"]}" stroke-width="1" opacity="0.35"/>')
 
 
-def shield():
-    """dns-blocklist-builder — Schild ueber durchgestrichenem Funksignal.
-
-    Bewusst nur ein Bogenpaar statt zwei: mit vier Boegen lief das Innere
-    bei 44px zu einem Fleck zusammen.
-    """
-    p = ['<path d="M60,20 L92,33 V57 C92,77 78,90 60,96 '
-         'C42,90 28,77 28,57 V33 Z"/>']
-    p.append('<circle cx="60" cy="58" r="5"/>')
-    p.append('<path d="M44,44 A21,21 0 0,0 44,72"/>')
-    p.append('<path d="M76,44 A21,21 0 0,1 76,72"/>')
-    p.append('<path d="M38,84 L84,34" stroke-width="3.6"/>')
-    return "".join(p)
-
-
 def humanitas():
     """humanism — Bogen, Sonne, aufgeschlagenes Buch.
 
@@ -163,15 +148,33 @@ def hollow_check():
     return "".join(p)
 
 
+def notes_to_page():
+    """apple-notes-to-pages — viele Blaetter, ein Dokument mit Inhaltsverzeichnis.
+
+    Hinten zwei Blaetter nur als Winkel (Kante links und oben), sonst
+    ueberlagern sich drei volle Rechtecke bei 44px zu einem Gitter. Vorn die
+    Seite mit Eselsohr, darauf Zeilen mit Punkt als Seitenzahl.
+    """
+    p = ['<path d="M34,84 V24 H72" stroke-width="1.6" opacity="0.6"/>',
+         '<path d="M40,90 V30 H78" stroke-width="2" opacity="0.8"/>',
+         '<path d="M46,36 H78 L88,46 V96 H46 Z"/>',
+         '<path d="M78,36 V46 H88" stroke-width="1.8"/>']
+    for y in (58, 68, 78, 88):
+        p.append(f'<path d="M54,{y} H72" stroke-width="1.8" '
+                 f'stroke-linecap="round"/>')
+        p.append(f'<circle cx="80" cy="{y}" r="1.6"/>')
+    return "".join(p)
+
+
 ICONS = {
     "correctness-checks": hollow_check,
-    "dns-blocklist": shield,
     "faktenchecker": magnifier,
     "humanism": humanitas,
     "olivera": olive,
     "dwc": dwc,
     "soil-coco": soil,
     "katzen": cat_wave,
+    "apple-notes": notes_to_page,
 }
 
 

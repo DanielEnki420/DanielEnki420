@@ -48,6 +48,8 @@ ROWS = [
                        "OLED display"]),
     ("MEDIA &amp; KNOWLEDGE", ["Immich", "Calibre-Web", "Kiwix"]),
     ("LOCAL AI", ["Ollama", "Open WebUI", "LiteLLM"]),
+    ("OWN APPS", ["Grow diary", "Recipes", "Household ledger", "PennyScope",
+                  "faktenchecker", "katzen-analyzer"]),
     ("BACKUP", ["restic &#8594; off-site, nightly"]),
 ]
 

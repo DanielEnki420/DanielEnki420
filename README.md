@@ -105,6 +105,24 @@ spot-checks the numbers against the charts.
 </tr>
 </table>
 
+## For the Mac
+
+<table>
+<tr>
+<td width="104" align="center" valign="middle">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-apple-notes-dark.svg">
+    <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-apple-notes-light.svg" width="72" alt="">
+  </picture>
+</td>
+<td valign="top">
+  <h3><a href="https://github.com/DanielEnki420/apple-notes-to-pages">apple-notes-to-pages</a></h3>
+  <p>Merges all your Apple Notes into one Pages document — clickable table of contents, formatting and images kept. One command, strictly read-only: only macOS built-ins and the Python standard library, nothing to install, no network access.</p>
+  <p><code>Python</code> · MIT</p>
+</td>
+</tr>
+</table>
+
 ## Olivera — built, running, for sale
 
 My largest piece of work: a platform for leasing olive trees and selling the oil
@@ -200,7 +218,7 @@ switches the payment keys to live and takes over a finished system.
 </td>
 <td valign="top">
   <h3><a href="https://github.com/DanielEnki420/katzen-analyzer">katzen-analyzer</a></h3>
-  <p>Real-time FFT spectral analysis of cat vocalizations, with AI-assisted interpretation of the result. Browser-side, containerised.</p>
+  <p>Real-time FFT spectral analysis of cat vocalizations, with AI-assisted interpretation of the result. Browser-side, containerised. An entertainment and learning project, and it says so up front: the classification is simple heuristics, not validated bioacoustics.</p>
   <p><a href="https://danielenki420.github.io/katzen-analyzer/"><b>&rarr; Live tool</b></a> · <code>HTML</code> <code>JavaScript</code> <code>Docker</code> · Apache-2.0</p>
 </td>
 </tr>
