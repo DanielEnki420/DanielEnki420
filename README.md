@@ -7,7 +7,7 @@
 > **Esse quam videri** — to be, rather than to seem.
 
 I build small, self-contained tools and run them myself. Most of it lives on a
-Raspberry Pi 5 in my living room — 35 containers, no cloud, backed up off-site.
+Raspberry Pi 5 in my living room — 36 containers, no cloud, backed up off-site.
 What I publish is the part that is useful to someone other than me.
 
 ## Reason & evidence
@@ -213,7 +213,7 @@ Every feature was tested on these two. They remain unconvinced.
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stats-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stats-light.svg">
-  <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stats-light.svg" alt="Figures: 31 repositories (8 public), 8 stars, 35 containers on one Raspberry Pi 5" width="100%">
+  <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stats-light.svg" alt="Figures: 32 repositories (8 public), 4 stars, 36 containers on one Raspberry Pi 5" width="100%">
 </picture>
 
 <picture>

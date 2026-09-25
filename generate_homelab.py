@@ -51,9 +51,9 @@ ROWS = [
     ("BACKUP", ["restic &#8594; off-site, nightly"]),
 ]
 
-CAPTION = ("35 containers &#183; one Raspberry Pi 5 &#183; two supervisors")
-NOTE = ("35 monitors, 13 of them dead-man switches &#183; two restores "
-        "proven daily, not described &#183; 59 automated tests &#183; "
+CAPTION = ("36 containers &#183; one Raspberry Pi 5 &#183; two supervisors")
+NOTE = ("42 monitors, 20 of them dead-man switches &#183; six restores "
+        "proven daily, not described &#183; 432 automated tests &#183; "
         "self-reported")
 
 
