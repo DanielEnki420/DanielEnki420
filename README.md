@@ -12,7 +12,7 @@ What I publish is the part that is useful to someone other than me.
 
 ## Reason & evidence
 
-Four tools with one thread — make it a little harder for something to pass as
+Three tools with one thread — make it a little harder for something to pass as
 what it is not.
 
 <table>
@@ -65,8 +65,12 @@ what it is not.
 
 ## Growing
 
-Two calculators, same idea, different medium. Nutrient schedules, pH/EC tracking and
-a grow diary that never leaves the browser.
+Two nutrient calculators — one for deep water culture, one for soil and coco.
+Each is a single HTML file that works offline; grow data stays in the browser, and
+the optional AI assistant runs on your own Gemini key. In September 2026 I checked
+every feeding plan in both against the manufacturer's own schedule and corrected
+what did not match. Every plan now names its source, and a test in each repo
+spot-checks the numbers against the charts.
 
 <table>
 <tr>
@@ -78,8 +82,10 @@ a grow diary that never leaves the browser.
 </td>
 <td valign="top">
   <h3><a href="https://github.com/DanielEnki420/dwc-grower-edition">dwc-grower-edition</a></h3>
-  <p>Deep-water-culture hydroponics: brand nutrient schedules, pH/EC/temperature/ORP alerts, AI assistant, grow diary. Fully local — no cloud, no account.</p>
-  <p><a href="https://danielenki420.github.io/dwc-grower-edition/"><b>&rarr; Live tool</b></a> · <code>HTML</code> · MIT</p>
+  <p>Deep water culture. Doses in ml for your reservoir, week by week, for 13 nutrient brands — each from the maker's DWC or hydro schedule. Biobizz is listed but locked: its maker says the mixed solution must not stand for more than a day.</p>
+  <p>Warnings for pH, EC, temperature and ORP, an EC top-up calculator, water-change reminder, harvest countdown and grow diary. Six languages.</p>
+  <p><a href="https://danielenki420.github.io/dwc-grower-edition/"><b>&rarr; Live tool</b></a> ·
+  <a href="https://github.com/DanielEnki420/dwc-grower-edition/blob/main/tests/brands-belege.js">dose check</a> · <code>HTML</code> · MIT</p>
 </td>
 </tr>
 <tr>
@@ -91,8 +97,10 @@ a grow diary that never leaves the browser.
 </td>
 <td valign="top">
   <h3><a href="https://github.com/DanielEnki420/soil-coco-grower-edition">soil-coco-grower-edition</a></h3>
-  <p>The same for soil and coco — 25 brands, pH/EC tracking, grow diary, four languages. Offline as well.</p>
-  <p><a href="https://danielenki420.github.io/soil-coco-grower-edition/"><b>&rarr; Live tool</b></a> · <code>HTML</code> · MIT</p>
+  <p>Soil, coco or a mix of both. 21 manufacturers in 31 plans — soil and coco kept apart wherever the maker publishes separate charts.</p>
+  <p>pH and EC targets that follow the substrate, runoff tracking for salt build-up, feeding reminders for every first, second or third watering, charts and a grow diary. Four languages.</p>
+  <p><a href="https://danielenki420.github.io/soil-coco-grower-edition/"><b>&rarr; Live tool</b></a> ·
+  <a href="https://github.com/DanielEnki420/soil-coco-grower-edition/blob/main/tests/coco-belege.js">dose check</a> · <code>HTML</code> · MIT</p>
 </td>
 </tr>
 </table>
