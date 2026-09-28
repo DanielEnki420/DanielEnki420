@@ -43,7 +43,7 @@ ROWS = [
     ("NETWORK &amp; PRIVACY", ["Pi-hole", "Unbound", "Tailscale", "CrowdSec",
                                "Fail2ban", "Vaultwarden"]),
     ("HOME AUTOMATION", ["ioBroker (Tuya, Zigbee, Shelly)",
-                         "Telegram alerting"]),
+                         "Atmotube air sensor", "Telegram alerting"]),
     ("OBSERVABILITY", ["Grafana", "Prometheus", "Uptime Kuma", "Portainer",
                        "OLED display"]),
     ("MEDIA &amp; KNOWLEDGE", ["Immich", "Calibre-Web", "Kiwix"]),
@@ -54,8 +54,8 @@ ROWS = [
 ]
 
 CAPTION = ("36 containers &#183; one Raspberry Pi 5 &#183; two supervisors")
-NOTE = ("42 monitors, 20 of them dead-man switches &#183; six restores "
-        "proven daily, not described &#183; 432 automated tests &#183; "
+NOTE = ("46 monitors, 24 of them dead-man switches &#183; six restores "
+        "proven daily, two off-site weekly &#183; 508 automated tests &#183; "
         "self-reported")
 
 

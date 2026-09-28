@@ -105,6 +105,25 @@ spot-checks the numbers against the charts.
 </tr>
 </table>
 
+## For the Pi
+
+<table>
+<tr>
+<td width="104" align="center" valign="middle">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-atmotube-dark.svg">
+    <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-atmotube-light.svg" width="72" alt="">
+  </picture>
+</td>
+<td valign="top">
+  <h3><a href="https://github.com/DanielEnki420/atmotube-prometheus">atmotube-prometheus</a></h3>
+  <p>Reads an Atmotube PRO air sensor over Bluetooth LE and hands particulate matter, VOC, temperature, humidity and pressure to Prometheus through node_exporter's textfile collector. The sensor splits each reading across two packets with the same manufacturer ID, and BlueZ can silently drop one of them; the exporter notices the gap and reads the missing values over a short GATT connection instead.</p>
+  <p>One Python file, threshold alerts, a Grafana dashboard. No cloud, no Home Assistant.</p>
+  <p><code>Python</code> · MIT</p>
+</td>
+</tr>
+</table>
+
 ## For the Mac
 
 <table>

@@ -166,8 +166,23 @@ def notes_to_page():
     return "".join(p)
 
 
+def air():
+    """atmotube-prometheus — drei Luftstroeme, zwei davon eingerollt, und Partikel.
+
+    Die Wirbel enden in Halbkreisen statt in Spiralen: bei 44px laufen
+    engere Windungen zu einem Fleck zusammen.
+    """
+    p = ['<path d="M26,46 H70 A10,10 0 1,0 60,36" stroke-linecap="round"/>',
+         '<path d="M26,62 H84 A10,10 0 1,1 74,72" stroke-linecap="round"/>',
+         '<path d="M26,78 H56" stroke-linecap="round"/>']
+    for px, py, r in ((66, 88, 2.6), (80, 92, 2), (40, 94, 2.2)):
+        p.append(f'<circle cx="{px}" cy="{py}" r="{r}"/>')
+    return "".join(p)
+
+
 ICONS = {
     "correctness-checks": hollow_check,
+    "atmotube": air,
     "faktenchecker": magnifier,
     "humanism": humanitas,
     "olivera": olive,

@@ -28,7 +28,7 @@ FALLBACK = {"repos_total": 32, "repos_public": 8, "stars": 4, "date": "2026-09-2
 
 # Der Heimserver-Block ist selbst berichtet, nicht aus einer API — deshalb
 # stehen hier bewusst Naeherungen ("~30") statt exakter Zahlen.
-CONTAINERS = "36"  # docker ps am 25.9.2026
+CONTAINERS = "36"  # docker ps am 28.9.2026
 HOMELAB = [
     ("containers", CONTAINERS),
     ("host", "1x Raspberry Pi 5"),
