@@ -7,7 +7,7 @@
 > **Esse quam videri** — to be, rather than to seem.
 
 I build small, self-contained tools and run them myself. Most of it lives on a
-Raspberry Pi 5 in my living room — 36 containers, no cloud, backed up off-site.
+Raspberry Pi 5 in my living room — 35 containers, no cloud, backed up off-site.
 What I publish is the part that is useful to someone other than me.
 
 ## Reason & evidence
@@ -191,6 +191,12 @@ switches the payment keys to live and takes over a finished system.
 
 ## The homelab
 
+In October 2026 the dashboards moved from Grafana to
+[Perses](https://perses.dev), an open-source CNCF project: dashboards as code,
+checked by a linter in the test suite, read-only with no login. Prometheus stayed.
+The reason was not features — I want the stack to depend on open projects under
+neutral governance rather than on a single vendor.
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/homelab-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/homelab-light.svg">
@@ -209,7 +215,7 @@ switches the payment keys to live and takes over a finished system.
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stack-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stack-light.svg">
-  <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stack-light.svg" alt="Stack: Raspberry Pi 5, Linux, Docker, Pi-hole, Unbound, Grafana, Prometheus, ioBroker, Tailscale, restic; TypeScript, JavaScript, Node.js, Python, Bash" width="100%">
+  <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stack-light.svg" alt="Stack: Raspberry Pi 5, Linux, Docker, NVMe, Samba; TypeScript, JavaScript, Node.js, Python, Bash" width="100%">
 </picture>
 
 <picture>
@@ -250,7 +256,7 @@ Every feature was tested on these two. They remain unconvinced.
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stats-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stats-light.svg">
-  <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stats-light.svg" alt="Figures: 34 repositories (10 public), 5 stars, 36 containers on one Raspberry Pi 5" width="100%">
+  <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stats-light.svg" alt="Figures: 34 repositories (10 public), 5 stars, 35 containers on one Raspberry Pi 5" width="100%">
 </picture>
 
 <picture>

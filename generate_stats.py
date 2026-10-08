@@ -24,11 +24,11 @@ from theme import MONO, THEMES, card, corner_brackets
 W, H = 1200, 300
 
 # Stand, falls die API nicht erreichbar ist (--offline oder Netzfehler).
-FALLBACK = {"repos_total": 32, "repos_public": 8, "stars": 4, "date": "2026-09-25"}
+FALLBACK = {"repos_total": 34, "repos_public": 10, "stars": 5, "date": "2026-10-08"}
 
 # Der Heimserver-Block ist selbst berichtet, nicht aus einer API — deshalb
 # stehen hier bewusst Naeherungen ("~30") statt exakter Zahlen.
-CONTAINERS = "36"  # docker ps am 28.9.2026
+CONTAINERS = "35"  # docker ps am 8.10.2026 (Grafana + Renderer raus, Perses rein)
 HOMELAB = [
     ("containers", CONTAINERS),
     ("host", "1x Raspberry Pi 5"),

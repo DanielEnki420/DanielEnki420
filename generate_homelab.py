@@ -44,7 +44,7 @@ ROWS = [
                                "Fail2ban", "Vaultwarden"]),
     ("HOME AUTOMATION", ["ioBroker (Tuya, Zigbee, Shelly)",
                          "Atmotube air sensor", "Telegram alerting"]),
-    ("OBSERVABILITY", ["Grafana", "Prometheus", "Uptime Kuma", "Portainer",
+    ("OBSERVABILITY", ["Perses", "Prometheus", "Uptime Kuma", "Portainer",
                        "OLED display"]),
     ("MEDIA &amp; KNOWLEDGE", ["Immich", "Calibre-Web", "Kiwix"]),
     ("LOCAL AI", ["Ollama", "Open WebUI", "LiteLLM"]),
@@ -53,9 +53,9 @@ ROWS = [
     ("BACKUP", ["restic &#8594; off-site, nightly"]),
 ]
 
-CAPTION = ("36 containers &#183; one Raspberry Pi 5 &#183; two supervisors")
-NOTE = ("46 monitors, 24 of them dead-man switches &#183; six restores "
-        "proven daily, two off-site weekly &#183; 524 automated tests &#183; "
+CAPTION = ("35 containers &#183; one Raspberry Pi 5 &#183; two supervisors")
+NOTE = ("46 monitors, 25 of them dead-man switches &#183; six restores "
+        "proven daily, two off-site weekly &#183; 590 automated tests &#183; "
         "self-reported")
 
 
