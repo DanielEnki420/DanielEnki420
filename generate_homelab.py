@@ -46,7 +46,7 @@ ROWS = [
                          "Atmotube air sensor", "DWC water probe",
                          "Telegram alerting"]),
     ("OBSERVABILITY", ["Perses", "Prometheus", "Uptime Kuma", "Portainer",
-                       "OLED display"]),
+                       "Speed test", "OLED display"]),
     ("MEDIA &amp; KNOWLEDGE", ["Immich", "Calibre-Web", "Kiwix"]),
     ("LOCAL AI", ["Ollama", "Open WebUI", "LiteLLM"]),
     ("OWN APPS", ["Grow diary", "Recipes", "Household ledger", "PennyScope",
@@ -56,7 +56,7 @@ ROWS = [
 
 CAPTION = ("35 containers &#183; one Raspberry Pi 5 &#183; two supervisors")
 NOTE = ("46 monitors, 25 of them dead-man switches &#183; six restores "
-        "proven daily, two off-site weekly &#183; 619 automated tests &#183; "
+        "proven daily, two off-site weekly &#183; 652 automated tests &#183; "
         "self-reported")
 
 
