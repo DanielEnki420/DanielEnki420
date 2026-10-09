@@ -42,8 +42,9 @@ TOP = RULE_Y + 32           # erste Pillenzeile
 ROWS = [
     ("NETWORK &amp; PRIVACY", ["Pi-hole", "Unbound", "Tailscale", "CrowdSec",
                                "Fail2ban", "Vaultwarden"]),
-    ("HOME AUTOMATION", ["ioBroker (Tuya, Zigbee, Shelly)",
-                         "Atmotube air sensor", "Telegram alerting"]),
+    ("HOME AUTOMATION", ["ioBroker (Xiaomi, Tuya)",
+                         "Atmotube air sensor", "DWC water probe",
+                         "Telegram alerting"]),
     ("OBSERVABILITY", ["Perses", "Prometheus", "Uptime Kuma", "Portainer",
                        "OLED display"]),
     ("MEDIA &amp; KNOWLEDGE", ["Immich", "Calibre-Web", "Kiwix"]),
@@ -55,7 +56,7 @@ ROWS = [
 
 CAPTION = ("35 containers &#183; one Raspberry Pi 5 &#183; two supervisors")
 NOTE = ("46 monitors, 25 of them dead-man switches &#183; six restores "
-        "proven daily, two off-site weekly &#183; 590 automated tests &#183; "
+        "proven daily, two off-site weekly &#183; 619 automated tests &#183; "
         "self-reported")
 
 
