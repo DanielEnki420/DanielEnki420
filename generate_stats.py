@@ -24,7 +24,7 @@ from theme import MONO, THEMES, card, corner_brackets
 W, H = 1200, 300
 
 # Stand, falls die API nicht erreichbar ist (--offline oder Netzfehler).
-FALLBACK = {"repos_total": 34, "repos_public": 10, "stars": 5, "date": "2026-10-08"}
+FALLBACK = {"repos_total": 36, "repos_public": 12, "stars": 5, "date": "2026-11-05"}
 
 # Der Heimserver-Block ist selbst berichtet, nicht aus einer API — deshalb
 # stehen hier bewusst Naeherungen ("~30") statt exakter Zahlen.

@@ -272,7 +272,7 @@ Every feature was tested on these two. They remain unconvinced.
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stats-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stats-light.svg">
-  <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stats-light.svg" alt="Figures: 34 repositories (10 public), 5 stars, 35 containers on one Raspberry Pi 5" width="100%">
+  <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stats-light.svg" alt="Figures: 36 repositories (12 public), 5 stars, 35 containers on one Raspberry Pi 5" width="100%">
 </picture>
 
 <picture>
