@@ -12,7 +12,7 @@ Schreibt assets/banner-dark.svg und assets/banner-light.svg.
 import math
 import pathlib
 
-from theme import MONO, SERIF, THEMES
+from theme import SERIF, THEMES
 
 W, H = 1200, 304
 
@@ -28,28 +28,28 @@ R_BAND_OUT = 116     # Maeanderband aussen
 R_BAND_IN = 91       # Maeanderband innen
 R_INNER = 84         # innere Haarlinie
 MEANDER_UNITS = 28   # Wiederholungen des Schluesselmotivs
-MOTTO = "ESSE QUAM VIDERI"
 
-# Das Spektrum laeuft als Fussleiste unter dem Textblock und endet vor dem
-# Logo-Ring, damit sich beide nicht ins Gehege kommen.
 MARGIN = 64
-SPEC_X1 = 878
-BAR_W = 10
-BAR_GAP = 6
-BARS = (SPEC_X1 - MARGIN + BAR_GAP) // (BAR_W + BAR_GAP)
-BASE_Y = 284
-MAX_BAR = 54
+BASE_Y = 280
 
 
-def spectrum(t):
-    """Zwei ueberlagerte Wellen + Abfall zu den Raendern.
-
-    Sieht aus wie ein FFT-Frame — der rote Faden zum katzen-analyzer.
-    """
-    x = t / (BARS - 1)
-    envelope = math.sin(math.pi * x) ** 0.65
-    detail = 0.55 + 0.45 * math.sin(x * 17.0) * math.cos(x * 9.0 + 0.6)
-    return max(0.12, envelope * detail)
+def frieze(c, x1, x2, base):
+    """Zikkurat-Fries: Strichhoehe steigt in Stufen zur Mitte und faellt wieder."""
+    step, tiers, tier_h = 12, 6, 6
+    n = int((x2 - x1) // step) + 1
+    out = [f'<g stroke="{c["gold"]}" stroke-width="2" stroke-linecap="butt">']
+    for i in range(n):
+        x = x1 + i * step
+        d = abs(i - (n - 1) / 2) / ((n - 1) / 2)      # 0 Mitte .. 1 Rand
+        tier = tiers - min(tiers - 1, int(d * tiers))  # 1..tiers
+        h = 6 + tier * tier_h
+        op = 0.35 + 0.1 * tier
+        out.append(f'<line x1="{x}" y1="{base}" x2="{x}" y2="{base - h}" '
+                   f'opacity="{op:.2f}"/>')
+    out.append(f'<line x1="{x1 - 2}" y1="{base + 0.5}" x2="{x2 + 2}" '
+               f'y2="{base + 0.5}" stroke-width="1.4"/>')
+    out.append('</g>')
+    return "".join(out)
 
 
 def double_border(c):
@@ -154,11 +154,14 @@ def meander_ring(c):
     # Wahlspruch — Versalien, gesperrt, wie auf dem Original.
     # textLength/lengthAdjust nagelt die Breite fest: der Spruch bleibt im
     # Innenkreis, auch wenn beim Betrachter eine andere Serife einspringt.
-    text_w = 2 * R_INNER - 32
-    add(f'<text x="{LOGO_CX}" y="{LOGO_CY + 6}" text-anchor="middle" '
-        f'font-family="{SERIF}" font-size="16" '
-        f'textLength="{text_w}" lengthAdjust="spacingAndGlyphs" '
-        f'fill="{c["gold"]}">{MOTTO}</text>')
+    # Zweizeilig und groesser: einzeilig in 16px war der Spruch auf der
+    # Profilseite (Banner ~830px breit) nur noch ~11px hoch und unlesbar.
+    for line, y, w in (("ESSE QUAM", LOGO_CY - 4, 2 * R_INNER - 40),
+                       ("VIDERI", LOGO_CY + 26, 2 * R_INNER - 76)):
+        add(f'<text x="{LOGO_CX}" y="{y}" text-anchor="middle" '
+            f'font-family="{SERIF}" font-size="24" '
+            f'textLength="{w}" lengthAdjust="spacingAndGlyphs" '
+            f'fill="{c["gold"]}">{line}</text>')
 
     assert band_h < (R_BAND_OUT - R_BAND_IN) + 2, "Band laeuft ueber"
     return "".join(out)
@@ -171,69 +174,35 @@ def build(theme_name):
 
     add(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" '
         f'width="{W}" height="{H}" role="img" '
-        f'aria-label="Daniel — self-hosting, home automation, network privacy">')
-
-    # Verlauf fuer die Spektrumsbalken.
-    # userSpaceOnUse ist hier zwingend: mit dem Default (objectBoundingBox)
-    # bekaeme JEDER Balken den kompletten Farbverlauf auf seinen 10 Pixeln —
-    # alle saehen dann gleich aus. So laeuft er ueber die gesamte Reihe.
-    add('<defs>')
-    add(f'<linearGradient id="g" gradientUnits="userSpaceOnUse" '
-        f'x1="{MARGIN}" y1="0" x2="{SPEC_X1}" y2="0">')
-    add(f'<stop offset="0%" stop-color="{c["a1"]}"/>')
-    add(f'<stop offset="50%" stop-color="{c["a2"]}"/>')
-    add(f'<stop offset="100%" stop-color="{c["a3"]}"/>')
-    add('</linearGradient>')
-    add('</defs>')
+        f'aria-label="Daniel Enki — self-hosting, tools that prove they work">')
 
     add(f'<rect width="{W}" height="{H}" rx="14" fill="{c["bg"]}"/>')
 
-    # Feines Raster im Hintergrund
-    for gx in range(0, W, 40):
-        add(f'<line x1="{gx}" y1="0" x2="{gx}" y2="{H}" '
-            f'stroke="{c["grid"]}" stroke-width="1"/>')
-    for gy in range(0, H, 40):
-        add(f'<line x1="0" y1="{gy}" x2="{W}" y2="{gy}" '
-            f'stroke="{c["grid"]}" stroke-width="1"/>')
-
     add(sunburst(c))
 
-    # Prompt
-    add(f'<text x="64" y="64" font-family="{MONO}" font-size="25" '
-        f'fill="{c["a1"]}">$ whoami</text>')
+    # Name: gesperrte Serifen-Versalien wie auf Deco-Plakaten. Ersetzt das
+    # Terminal-Motiv ($ whoami + Cursor), das nicht zum Deco-Rahmen passte.
+    add(f'<text x="{MARGIN}" y="148" font-family="{SERIF}" font-size="80" '
+        f'textLength="736" lengthAdjust="spacing" '
+        f'fill="{c["fg"]}">DANIEL ENKI</text>')
 
-    # Name + blinkender Cursor.
-    # Monospace-Vorschub ist 0.6em, "Daniel" = 6 Zeichen -> Cursor sitzt buendig.
-    name, size = "Daniel", 86
-    cursor_x = 64 + len(name) * size * 0.6 + 9
-    add(f'<text x="64" y="152" font-family="{MONO}" font-size="{size}" '
-        f'font-weight="700" fill="{c["fg"]}">{name}</text>')
-    add(f'<rect x="{cursor_x:.0f}" y="100" width="26" height="58" '
-        f'fill="{c["a2"]}">'
-        f'<animate attributeName="opacity" values="1;1;0;0" dur="1.2s" '
-        f'repeatCount="indefinite"/></rect>')
+    # Goldlinie mit Raute in der Mitte
+    rule_y, rule_x2 = 178, 800
+    mid = (MARGIN + rule_x2) / 2
+    add(f'<path d="M{MARGIN},{rule_y} H{mid - 14} M{mid + 14},{rule_y} '
+        f'H{rule_x2}" stroke="{c["gold"]}" stroke-width="1.4"/>')
+    add(f'<path d="M{mid},{rule_y - 7} L{mid + 7},{rule_y} L{mid},'
+        f'{rule_y + 7} L{mid - 7},{rule_y} Z" fill="{c["gold"]}"/>')
 
-    # Tagline
-    add(f'<text x="64" y="198" font-family="{MONO}" font-size="23" '
-        f'fill="{c["muted"]}">self-hosting &#183; home automation &#183; '
-        f'network privacy</text>')
+    # Unterzeile in gesperrten Versalien
+    add(f'<text x="{MARGIN}" y="214" font-family="{SERIF}" font-size="19" '
+        f'textLength="{rule_x2 - MARGIN}" lengthAdjust="spacing" '
+        f'fill="{c["muted"]}">SELF-HOSTING &#183; TOOLS THAT PROVE THEY WORK'
+        f'</text>')
 
-    # Spektrum
-    start_x = MARGIN
-    for i in range(BARS):
-        h = spectrum(i) * MAX_BAR
-        x = start_x + i * (BAR_W + BAR_GAP)
-        y = BASE_Y - h
-        lo, hi = h * 0.45, h
-        add(f'<rect x="{x:.1f}" y="{y:.1f}" width="{BAR_W}" height="{h:.1f}" '
-            f'rx="3" fill="url(#g)" opacity="0.9">'
-            f'<animate attributeName="height" '
-            f'values="{h:.1f};{lo:.1f};{hi:.1f};{h:.1f}" dur="2.8s" '
-            f'begin="{i * 0.045:.2f}s" repeatCount="indefinite"/>'
-            f'<animate attributeName="y" '
-            f'values="{y:.1f};{BASE_Y - lo:.1f};{BASE_Y - hi:.1f};{y:.1f}" '
-            f'dur="2.8s" begin="{i * 0.045:.2f}s" repeatCount="indefinite"/>'
-            f'</rect>')
+    # Gestufter Fries statt Spektrum: senkrechte Goldstriche, symmetrisch in
+    # Terrassen ansteigend wie eine Deco-Fassade (Zikkurat).
+    add(frieze(c, MARGIN + 40, rule_x2 - 40, BASE_Y))
 
     add(meander_ring(c))
 

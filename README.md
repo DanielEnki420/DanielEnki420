@@ -1,50 +1,31 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/banner-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/banner-light.svg">
-  <img alt="Daniel — self-hosting, home automation, network privacy" src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/banner-light.svg">
+  <img alt="Daniel Enki — self-hosting, tools that prove they work" src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/banner-light.svg">
 </picture>
 
-> **Esse quam videri** — to be, rather than to seem.
-
-I build small, self-contained tools and run them myself. Most of it lives on a
-Raspberry Pi 5 in my living room — 35 containers, no cloud, backed up off-site.
-What I publish is the part that is useful to someone other than me.
+I build tools that **prove they work instead of just looking healthy** — and run
+them myself, on a Raspberry Pi 5 in my living room: 35 containers, no cloud,
+backed up off-site. What I publish is the part that is useful to someone else.
 
 ## Decolab — my homelab, for your Pi
 
-<a href="https://github.com/DanielEnki420/decolab"><img src="https://raw.githubusercontent.com/DanielEnki420/decolab/main/docs/images/dashboard.png" alt="The Decolab dashboard: apps, CPU, RAM, disk, temperatures, monitoring, network and fan of a Raspberry Pi 5" width="100%"></a>
+<p align="center"><a href="https://github.com/DanielEnki420/decolab"><img src="https://raw.githubusercontent.com/DanielEnki420/decolab/main/docs/images/dashboard.png" alt="The Decolab dashboard: apps, CPU, RAM, disk, temperatures, monitoring, network and fan of a Raspberry Pi 5" width="80%"></a><br>
+<sub>The Decolab dashboard on a Raspberry Pi 5.</sub></p>
 
-The setup from my living room as a project anyone can install. Decolab turns a
-Raspberry Pi 5 into a self-hosted home server that **proves** it works instead
-of just looking healthy: backups are restored automatically and checked,
-monitors ask whether each service does its job, the defaults are hardened and
-every release tag is signed. Pi-hole with Unbound, Prometheus, Perses, Uptime
-Kuma, Portainer and a Samba NAS, optionally Immich and Vaultwarden — all from
-one plain `KEY=VALUE` file. Shell and the Python standard library, no build step.
+The setup from my living room as a project anyone can install. Backups are
+restored automatically and checked, monitors ask whether each service does its
+job, the defaults are hardened and every release tag is signed. Pi-hole with
+Unbound, Prometheus, [Perses](https://perses.dev), Uptime Kuma, Portainer and a
+Samba NAS, optionally Immich and Vaultwarden — all from one plain `KEY=VALUE`
+file. Shell and the Python standard library, no build step, only open projects
+under neutral governance.
 
 <a href="https://github.com/DanielEnki420/decolab"><b>&rarr; Repository</b></a> ·
 <a href="https://github.com/DanielEnki420/decolab/blob/main/INSTALL.md"><b>&rarr; Install guide</b></a> ·
-<code>Shell</code> <code>Python</code> · MIT or Apache-2.0 · before the first release
-
-## Reason & evidence
-
-Three tools with one thread — make it a little harder for something to pass as
-what it is not.
+<code>Shell</code> <code>Python</code> · MIT or Apache-2.0 · v0.3.0, signed releases
 
 <table>
-<tr>
-<td width="104" align="center" valign="middle">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-faktenchecker-dark.svg">
-    <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-faktenchecker-light.svg" width="72" alt="">
-  </picture>
-</td>
-<td valign="top">
-  <h3><a href="https://github.com/DanielEnki420/faktenchecker">faktenchecker</a></h3>
-  <p>An AI-assisted fact-checker that fits in a single HTML file — no backend, no build step, no account. German and English.</p>
-  <p><a href="https://danielenki420.github.io/faktenchecker/"><b>&rarr; Live tool</b></a> · <code>HTML</code> · MIT</p>
-</td>
-</tr>
 <tr>
 <td width="104" align="center" valign="middle">
   <picture>
@@ -54,39 +35,23 @@ what it is not.
 </td>
 <td valign="top">
   <h3><a href="https://github.com/DanielEnki420/correctness-checks">correctness-checks</a></h3>
-  <p>Monitoring templates that ask whether a service still does its job, not
-  whether it answers. A routine audit found three of mine dead for months behind
-  green dashboards: Samba refusing every login, backups that were valid archives
-  without the database, Portainer serving HTTP 200 with no Docker connection.
-  Every check reports to a push monitor that turns red on its own when the report
-  stops arriving.</p>
+  <p>The idea behind Decolab, as templates for any setup. A routine audit found
+  three of my services dead for months behind green dashboards: Samba refusing
+  every login, backups that were valid archives without the database, Portainer
+  serving HTTP 200 with no Docker connection. These checks ask whether a service
+  still does its job, not whether it answers — and report to a push monitor that
+  turns red on its own when the report stops arriving.</p>
   <p><code>Shell</code> · MIT</p>
-</td>
-</tr>
-
-<tr>
-<td width="104" align="center" valign="middle">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-humanism-dark.svg">
-    <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-humanism-light.svg" width="72" alt="">
-  </picture>
-</td>
-<td valign="top">
-  <h3><a href="https://github.com/DanielEnki420/humanism">humanism</a></h3>
-  <p>A trilingual (DE / EN / IT) landing page on secular humanism — reason, science, ethics. Built with TanStack Start.</p>
-  <p><a href="https://humanism.lovable.app"><b>&rarr; Live site</b></a> · <code>TypeScript</code> <code>CSS</code></p>
 </td>
 </tr>
 </table>
 
 ## Growing
 
-Two nutrient calculators — one for deep water culture, one for soil and coco.
-Each is a single HTML file that works offline; grow data stays in the browser, and
-the optional AI assistant runs on your own Gemini key. In September 2026 I checked
-every feeding plan in both against the manufacturer's own schedule and corrected
-what did not match. Every plan now names its source, and a test in each repo
-spot-checks the numbers against the charts.
+Two nutrient calculators, each a single HTML file that works offline; grow data
+stays in the browser. Every feeding plan was checked against the manufacturer's
+own schedule, names its source, and a test spot-checks the numbers against the
+charts.
 
 <table>
 <tr>
@@ -98,8 +63,7 @@ spot-checks the numbers against the charts.
 </td>
 <td valign="top">
   <h3><a href="https://github.com/DanielEnki420/dwc-grower-edition">dwc-grower-edition</a></h3>
-  <p>Deep water culture. Doses in ml for your reservoir, week by week, for 13 nutrient brands — each from the maker's DWC or hydro schedule. Biobizz is listed but locked: its maker says the mixed solution must not stand for more than a day.</p>
-  <p>Warnings for pH, EC, temperature and ORP, an EC top-up calculator, water-change reminder, harvest countdown and grow diary. Six languages.</p>
+  <p>Deep water culture. Doses in ml for your reservoir, week by week, for 13 nutrient brands. Warnings for pH, EC, temperature and ORP, EC top-up calculator, water-change reminder and grow diary. Six languages.</p>
   <p><a href="https://danielenki420.github.io/dwc-grower-edition/"><b>&rarr; Live tool</b></a> ·
   <a href="https://github.com/DanielEnki420/dwc-grower-edition/blob/main/tests/brands-belege.js">dose check</a> · <code>HTML</code> · MIT</p>
 </td>
@@ -113,17 +77,29 @@ spot-checks the numbers against the charts.
 </td>
 <td valign="top">
   <h3><a href="https://github.com/DanielEnki420/soil-coco-grower-edition">soil-coco-grower-edition</a></h3>
-  <p>Soil, coco or a mix of both. 21 manufacturers in 31 plans — soil and coco kept apart wherever the maker publishes separate charts.</p>
-  <p>pH and EC targets that follow the substrate, runoff tracking for salt build-up, feeding reminders for every first, second or third watering, charts and a grow diary. Four languages.</p>
+  <p>Soil, coco or a mix. 21 manufacturers in 31 plans, pH and EC targets that follow the substrate, runoff tracking for salt build-up and a grow diary. Four languages.</p>
   <p><a href="https://danielenki420.github.io/soil-coco-grower-edition/"><b>&rarr; Live tool</b></a> ·
   <a href="https://github.com/DanielEnki420/soil-coco-grower-edition/blob/main/tests/coco-belege.js">dose check</a> · <code>HTML</code> · MIT</p>
 </td>
 </tr>
 </table>
 
-## For the Pi
+## Smaller tools
 
 <table>
+<tr>
+<td width="104" align="center" valign="middle">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-dns-blocklist-dark.svg">
+    <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-dns-blocklist-light.svg" width="72" alt="">
+  </picture>
+</td>
+<td valign="top">
+  <h3><a href="https://github.com/DanielEnki420/dns-blocklist-builder">dns-blocklist-builder</a></h3>
+  <p>Builds DNS blocklists against disinformation, propaganda and tracking — 11 categories, 400+ domains, for Pi-hole, AdGuard, dnsmasq and Unbound. Runs in the browser, offline, no dependencies.</p>
+  <p><a href="https://danielenki420.github.io/dns-blocklist-builder/"><b>&rarr; Live tool</b></a> · <code>HTML</code> · MIT</p>
+</td>
+</tr>
 <tr>
 <td width="104" align="center" valign="middle">
   <picture>
@@ -133,16 +109,23 @@ spot-checks the numbers against the charts.
 </td>
 <td valign="top">
   <h3><a href="https://github.com/DanielEnki420/atmotube-prometheus">atmotube-prometheus</a></h3>
-  <p>Reads an Atmotube PRO air sensor over Bluetooth LE and hands particulate matter, VOC, temperature, humidity and pressure to Prometheus through node_exporter's textfile collector. The sensor splits each reading across two packets with the same manufacturer ID, and BlueZ can silently drop one of them; the exporter notices the gap and reads the missing values over a short GATT connection instead.</p>
-  <p>One Python file, threshold alerts, dashboards for Perses and Grafana. No cloud, no Home Assistant.</p>
+  <p>Reads an Atmotube PRO air sensor over Bluetooth LE and hands particulate matter, VOC, temperature, humidity and pressure to Prometheus. When BlueZ drops half of a split reading, it fetches the gap over a short GATT connection. One Python file, no cloud, no Home Assistant.</p>
   <p><code>Python</code> · MIT</p>
 </td>
 </tr>
-</table>
-
-## For the Mac
-
-<table>
+<tr>
+<td width="104" align="center" valign="middle">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-faktenchecker-dark.svg">
+    <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-faktenchecker-light.svg" width="72" alt="">
+  </picture>
+</td>
+<td valign="top">
+  <h3><a href="https://github.com/DanielEnki420/faktenchecker">faktenchecker</a></h3>
+  <p>An AI-assisted fact-checker in a single HTML file — no backend, no build step, no account. German and English.</p>
+  <p><a href="https://danielenki420.github.io/faktenchecker/"><b>&rarr; Live tool</b></a> · <code>HTML</code> · MIT</p>
+</td>
+</tr>
 <tr>
 <td width="104" align="center" valign="middle">
   <picture>
@@ -152,20 +135,26 @@ spot-checks the numbers against the charts.
 </td>
 <td valign="top">
   <h3><a href="https://github.com/DanielEnki420/apple-notes-to-pages">apple-notes-to-pages</a></h3>
-  <p>Merges all your Apple Notes into one Pages document — clickable table of contents, formatting and images kept. One command, strictly read-only: only macOS built-ins and the Python standard library, nothing to install, no network access.</p>
+  <p>Merges all your Apple Notes into one Pages document with a clickable table of contents. Strictly read-only, macOS built-ins and the Python standard library only.</p>
   <p><code>Python</code> · MIT</p>
+</td>
+</tr>
+<tr>
+<td width="104" align="center" valign="middle">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-humanism-dark.svg">
+    <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/icon-humanism-light.svg" width="72" alt="">
+  </picture>
+</td>
+<td valign="top">
+  <h3><a href="https://github.com/DanielEnki420/humanism">humanism</a></h3>
+  <p>A trilingual (DE / EN / IT) landing page on secular humanism — reason, science, ethics.</p>
+  <p><a href="https://humanism.lovable.app"><b>&rarr; Live site</b></a> · <code>TypeScript</code></p>
 </td>
 </tr>
 </table>
 
 ## Olivera — built, running, for sale
-
-My largest piece of work: a platform for leasing olive trees and selling the oil
-directly. It is deployed and technically complete, and it has never been put into
-operation — no paying customers, no revenue, Stripe in test mode and PayPal
-implemented but currently disabled, the trees shown are sample data. I am not going
-to run it; I am selling it. A buyer
-switches the payment keys to live and takes over a finished system.
 
 <table>
 <tr>
@@ -177,77 +166,15 @@ switches the payment keys to live and takes over a finished system.
 </td>
 <td valign="top">
   <h3>olivera</h3>
-  <p><b>Frontend</b> — three Next.js 16 apps on the App Router (customer, admin,
-  farmer portal), React 19, TypeScript in strict mode, Tailwind and shadcn/ui,
-  Zustand and TanStack Query, five languages via next-intl.</p>
-  <p><b>Backend</b> — four Hono services (API, oracle, notifications, indexer) on
-  Node 20, PostgreSQL 16 with Drizzle ORM, Redis with BullMQ for queues.</p>
-  <p><b>Payments and mail</b> — Stripe (test mode) and PayPal (implemented, currently
-  disabled), Resend, Sentry.</p>
-  <p><b>Certificates</b> — each lease gets an Ed25519 signature, publicly
-  verifiable at <code>/verify</code> without a blockchain.</p>
-  <p><b>Operations</b> — Vercel for the frontends, self-hosted Coolify on a
-  Hetzner box for the services, nightly off-site backups, CI on every pull request.</p>
-  <p>~86,500 lines of TypeScript across a pnpm/Turborepo monorepo.</p>
+  <p>A platform for leasing olive trees and selling the oil directly: three Next.js apps, four Hono services, PostgreSQL, Stripe, signed lease certificates — ~86,500 lines of TypeScript. Deployed and technically complete, never put into operation (no customers, no revenue). I am selling it; a buyer switches the payment keys to live.</p>
   <p><a href="https://www.oli-vera.eu"><b>&rarr; Live platform</b></a> ·
-  <a href="https://app.littleexits.com/project/olivera-olive-tree-leasing-platform"><b>&rarr; For sale on Little Exits</b></a> ·
-  <a href="https://www.prerevmarket.com/production/olivera"><b>&rarr; For sale on PreRevMarket</b></a></p>
-  <p><code>TypeScript</code> <code>Next.js</code> <code>Hono</code>
-  <code>PostgreSQL</code> · private repo</p>
+  <a href="https://app.littleexits.com/project/olivera-olive-tree-leasing-platform"><b>&rarr; Little Exits</b></a> ·
+  <a href="https://www.prerevmarket.com/production/olivera"><b>&rarr; PreRevMarket</b></a> · private repo</p>
 </td>
 </tr>
 </table>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/divider-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/divider-light.svg">
-  <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/divider-light.svg" alt="" width="100%" height="24">
-</picture>
-
-
-## The homelab
-
-In October 2026 the dashboards moved from Grafana to
-[Perses](https://perses.dev), an open-source CNCF project: dashboards as code,
-checked by a linter in the test suite, read-only with no login. Prometheus stayed.
-The reason was not features — I want the stack to depend on open projects under
-neutral governance rather than on a single vendor.
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/homelab-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/homelab-light.svg">
-  <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/homelab-light.svg" alt="Homelab on one Raspberry Pi 5: Art Deco line drawing of two cats flanking the board, with services grouped by function" width="100%">
-</picture>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/divider-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/divider-light.svg">
-  <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/divider-light.svg" alt="" width="100%" height="24">
-</picture>
-
-
-## Stack
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stack-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stack-light.svg">
-  <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stack-light.svg" alt="Stack: Raspberry Pi 5, Linux, Docker, NVMe, Samba; TypeScript, JavaScript, Node.js, Python, Bash" width="100%">
-</picture>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/divider-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/divider-light.svg">
-  <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/divider-light.svg" alt="" width="100%" height="24">
-</picture>
-
-
 ## The test subjects
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/katzen-analyzer-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/katzen-analyzer-light.svg">
-  <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/katzen-analyzer-light.svg" alt="katzen-analyzer: two cats as the input signal, next to a running frequency spectrum" width="100%">
-</picture>
 
 <table>
 <tr>
@@ -259,21 +186,13 @@ neutral governance rather than on a single vendor.
 </td>
 <td valign="top">
   <h3><a href="https://github.com/DanielEnki420/katzen-analyzer">katzen-analyzer</a></h3>
-  <p>Real-time FFT spectral analysis of cat vocalizations, with AI-assisted interpretation of the result. Browser-side, containerised. An entertainment and learning project, and it says so up front: the classification is simple heuristics, not validated bioacoustics.</p>
-  <p><a href="https://danielenki420.github.io/katzen-analyzer/"><b>&rarr; Live tool</b></a> · <code>HTML</code> <code>JavaScript</code> <code>Docker</code> · Apache-2.0</p>
+  <p>Real-time FFT analysis of cat vocalizations, with AI-assisted interpretation. An entertainment project, and it says so: simple heuristics, not validated bioacoustics.</p>
+  <p><a href="https://danielenki420.github.io/katzen-analyzer/"><b>&rarr; Live tool</b></a> · <code>JavaScript</code> · Apache-2.0</p>
 </td>
 </tr>
 </table>
 
-Every feature was tested on these two. They remain unconvinced.
-
-## By the numbers
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stats-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stats-light.svg">
-  <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/stats-light.svg" alt="Figures: 36 repositories (12 public), 5 stars, 35 containers on one Raspberry Pi 5" width="100%">
-</picture>
+Every feature was tested on my two cats. They remain unconvinced.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/divider-dark.svg">
@@ -281,16 +200,10 @@ Every feature was tested on these two. They remain unconvinced.
   <img src="https://raw.githubusercontent.com/DanielEnki420/DanielEnki420/main/assets/divider-light.svg" alt="" width="100%" height="24">
 </picture>
 
-
 <sub>Apart from the Decolab screenshot, every graphic on this page is a plain SVG generated by the scripts in this repo
 (<a href="https://github.com/DanielEnki420/DanielEnki420/blob/main/generate_banner.py"><code>banner</code></a>,
-<a href="https://github.com/DanielEnki420/DanielEnki420/blob/main/generate_stats.py"><code>stats</code></a>,
-<a href="https://github.com/DanielEnki420/DanielEnki420/blob/main/generate_stack.py"><code>stack</code></a>,
 <a href="https://github.com/DanielEnki420/DanielEnki420/blob/main/generate_icons.py"><code>icons</code></a>,
-<a href="https://github.com/DanielEnki420/DanielEnki420/blob/main/generate_homelab.py"><code>homelab</code></a>,
-<a href="https://github.com/DanielEnki420/DanielEnki420/blob/main/generate_footer.py"><code>footer</code></a>,
 <a href="https://github.com/DanielEnki420/DanielEnki420/blob/main/generate_divider.py"><code>divider</code></a>),
 each in a light and a dark variant from one shared palette in
 <a href="https://github.com/DanielEnki420/DanielEnki420/blob/main/theme.py"><code>theme.py</code></a>.
-Nothing is loaded from a third party, so there is nothing to rate-limit and the whole
-page follows your GitHub theme. The figures are a snapshot from the last run, not a live feed.</sub>
+Nothing is loaded from a third party, so the whole page follows your GitHub theme.</sub>

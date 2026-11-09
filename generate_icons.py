@@ -180,7 +180,19 @@ def air():
     return "".join(p)
 
 
+def funnel():
+    """dns-blocklist-builder — Trichter, oben viele Domains, unten ein Strahl.
+
+    Kein Schild: das lief schon einmal bei 44px zu.
+    """
+    p = ['<path d="M28,40 H92 L68,66 V90 L52,98 V66 Z"/>']
+    for px in (36, 50, 64, 78):
+        p.append(f'<circle cx="{px}" cy="28" r="2.4"/>')
+    return "".join(p)
+
+
 ICONS = {
+    "dns-blocklist": funnel,
     "correctness-checks": hollow_check,
     "atmotube": air,
     "faktenchecker": magnifier,
