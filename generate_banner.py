@@ -185,8 +185,8 @@ def build(theme_name):
     # das Motto in der Mitte bleibt stehen.
     add('<style>'
         f'.cw,.ccw{{transform-origin:{LOGO_CX}px {LOGO_CY}px}}'
-        '.cw{animation:spin 60s linear infinite}'
-        '.ccw{animation:spin 120s linear infinite reverse}'
+        '.cw{animation:spin 30s linear infinite}'
+        '.ccw{animation:spin 60s linear infinite reverse}'
         '.fr{transform-box:fill-box;transform-origin:50% 100%;'
         'animation:breathe 3.2s ease-in-out infinite}'
         '@keyframes spin{to{transform:rotate(360deg)}}'
