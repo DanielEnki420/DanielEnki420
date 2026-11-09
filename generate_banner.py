@@ -44,7 +44,9 @@ def frieze(c, x1, x2, base):
         tier = tiers - min(tiers - 1, int(d * tiers))  # 1..tiers
         h = 6 + tier * tier_h
         op = 0.35 + 0.1 * tier
-        out.append(f'<line x1="{x}" y1="{base}" x2="{x}" y2="{base - h}" '
+        # Welle von der Mitte nach aussen: Verzoegerung waechst mit dem Abstand.
+        out.append(f'<line class="fr" style="animation-delay:{d * 1.6:.2f}s" '
+                   f'x1="{x}" y1="{base}" x2="{x}" y2="{base - h}" '
                    f'opacity="{op:.2f}"/>')
     out.append(f'<line x1="{x1 - 2}" y1="{base + 0.5}" x2="{x2 + 2}" '
                f'y2="{base + 0.5}" stroke-width="1.4"/>')
@@ -102,7 +104,8 @@ def sunburst(c):
     """
     r_in = R_RIM + 7
     r_out = R_RIM + 15
-    out = [f'<g opacity="0.22" stroke="{c["gold"]}" stroke-width="1">']
+    out = [f'<g class="ccw" opacity="0.22" stroke="{c["gold"]}" '
+           f'stroke-width="1">']
     n = 20
     for i in range(n):
         ang = math.radians(i * 360.0 / n)
@@ -141,7 +144,7 @@ def meander_ring(c):
     # stroke-width 1.2 statt 0.95 im Erstentwurf — auf dem breiteren Band
     # wirkte die duennere Linie ausgefranst statt kraeftig.
     unit = "M0,6 H8 M0,6 V0 H6 V4 H2 V2 H4"
-    add(f'<g fill="none" stroke="{c["gold"]}" stroke-width="1.2" '
+    add(f'<g class="cw" fill="none" stroke="{c["gold"]}" stroke-width="1.2" '
         f'stroke-linecap="square">')
     for i in range(MEANDER_UNITS):
         angle = i * 360.0 / MEANDER_UNITS
@@ -176,6 +179,21 @@ def build(theme_name):
         f'width="{W}" height="{H}" role="img" '
         f'aria-label="Daniel Enki — self-hosting, tools that prove they work">')
 
+    # Bewegung per CSS statt SMIL: so greift prefers-reduced-motion, und wer
+    # "Bewegung reduzieren" eingestellt hat, sieht den Banner still.
+    # Mäanderband dreht langsam, Strahlenkranz noch langsamer gegenlaeufig,
+    # das Motto in der Mitte bleibt stehen.
+    add('<style>'
+        f'.cw,.ccw{{transform-origin:{LOGO_CX}px {LOGO_CY}px}}'
+        '.cw{animation:spin 60s linear infinite}'
+        '.ccw{animation:spin 120s linear infinite reverse}'
+        '.fr{transform-box:fill-box;transform-origin:50% 100%;'
+        'animation:breathe 3.2s ease-in-out infinite}'
+        '@keyframes spin{to{transform:rotate(360deg)}}'
+        '@keyframes breathe{0%,100%{transform:scaleY(1)}'
+        '50%{transform:scaleY(.55)}}'
+        '@media (prefers-reduced-motion:reduce){.cw,.ccw,.fr{animation:none}}'
+        '</style>')
     add(f'<rect width="{W}" height="{H}" rx="14" fill="{c["bg"]}"/>')
 
     add(sunburst(c))
