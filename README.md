@@ -5,8 +5,8 @@
 </picture>
 
 I build tools that **prove they work instead of just looking healthy** — and run
-them myself, on a Raspberry Pi 5 in my living room: 35 containers, no cloud,
-backed up off-site. What I publish is the part that is useful to someone else.
+them myself, on a Raspberry Pi 5 in my living room: 35 containers, more than
+1,000 automated tests, no cloud, backed up off-site. What I publish is the part that is useful to someone else.
 
 ## Decolab — my homelab, for your Pi
 
@@ -18,8 +18,8 @@ restored automatically and checked, monitors ask whether each service does its
 job, the defaults are hardened and every release tag is signed. Pi-hole with
 Unbound, Prometheus, [Perses](https://perses.dev), Uptime Kuma, Portainer and a
 Samba NAS, optionally Immich and Vaultwarden — all from one plain `KEY=VALUE`
-file. Shell and the Python standard library, no build step, only open projects
-under neutral governance.
+file. Shell and the Python standard library, no build step, open-source
+software only.
 
 <a href="https://github.com/DanielEnki420/decolab"><b>&rarr; Repository</b></a> ·
 <a href="https://github.com/DanielEnki420/decolab/blob/main/INSTALL.md"><b>&rarr; Install guide</b></a> ·
@@ -96,7 +96,7 @@ charts.
 </td>
 <td valign="top">
   <h3><a href="https://github.com/DanielEnki420/dns-blocklist-builder">dns-blocklist-builder</a></h3>
-  <p>Builds DNS blocklists against disinformation, propaganda and tracking — 11 categories, 400+ domains, for Pi-hole, AdGuard, dnsmasq and Unbound. Runs in the browser, offline, no dependencies.</p>
+  <p>Builds DNS blocklists against disinformation, propaganda, tracking, scams and malware — 11 categories, about 1,000 domains, six formats (Pi-hole, AdGuard, dnsmasq, Unbound, hosts, RPZ), six languages. Runs in the browser, offline, no dependencies.</p>
   <p><a href="https://danielenki420.github.io/dns-blocklist-builder/"><b>&rarr; Live tool</b></a> · <code>HTML</code> · MIT</p>
 </td>
 </tr>
@@ -149,7 +149,7 @@ charts.
 <td valign="top">
   <h3><a href="https://github.com/DanielEnki420/humanism">humanism</a></h3>
   <p>A trilingual (DE / EN / IT) landing page on secular humanism — reason, science, ethics.</p>
-  <p><a href="https://humanism.lovable.app"><b>&rarr; Live site</b></a> · <code>TypeScript</code></p>
+  <p><a href="https://humanism.lovable.app"><b>&rarr; Live site</b></a> · <code>TypeScript</code> · MIT</p>
 </td>
 </tr>
 </table>
@@ -187,7 +187,7 @@ charts.
 <td valign="top">
   <h3><a href="https://github.com/DanielEnki420/katzen-analyzer">katzen-analyzer</a></h3>
   <p>Real-time FFT analysis of cat vocalizations, with AI-assisted interpretation. An entertainment project, and it says so: simple heuristics, not validated bioacoustics.</p>
-  <p><a href="https://danielenki420.github.io/katzen-analyzer/"><b>&rarr; Live tool</b></a> · <code>JavaScript</code> · Apache-2.0</p>
+  <p><a href="https://danielenki420.github.io/katzen-analyzer/"><b>&rarr; Live tool</b></a> · <code>HTML</code> · Apache-2.0</p>
 </td>
 </tr>
 </table>
