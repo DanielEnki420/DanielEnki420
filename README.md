@@ -96,7 +96,7 @@ charts.
 </td>
 <td valign="top">
   <h3><a href="https://github.com/DanielEnki420/dns-blocklist-builder">dns-blocklist-builder</a></h3>
-  <p>Builds DNS blocklists against disinformation, propaganda, tracking, scams and malware — 11 categories, about 1,000 domains, six formats (Pi-hole, AdGuard, dnsmasq, Unbound, hosts, RPZ), six languages. Runs in the browser, offline, no dependencies.</p>
+  <p>Builds DNS blocklists against disinformation, propaganda, tracking, scams and malware — 11 categories, 1,600+ domains updated weekly, six formats (Pi-hole, AdGuard, dnsmasq, Unbound, hosts, RPZ), six languages. Runs in the browser, offline, no dependencies.</p>
   <p><a href="https://danielenki420.github.io/dns-blocklist-builder/"><b>&rarr; Live tool</b></a> · <code>HTML</code> · MIT</p>
 </td>
 </tr>
